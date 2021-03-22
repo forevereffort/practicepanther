@@ -1,0 +1,29 @@
+<section class="all-press-release-section">
+    <div class="container">
+        <div class="all-press-release-header">
+            <div class="all-press-release-header-left">
+                <h2>{{ title }}</h2>
+            </div>
+        </div>
+        <div id="all-press-release-row" class="all-press-release-row">
+            {% for index, blog in blogs %}
+                <div class="all-press-release-item blog-card">
+                    <a href="{{ blog.link }}">
+                        <div class="inner">
+                            <div class="blog-image" style="background-image: url('{{ blog.thumbnail.src|resizeDynamic(400, 200) }}');"></div>
+                            <div class="blog-info">
+                                <div class="blog-category">{{ blog.date }}</div>
+                                <h3>{{ blog.title }}</h3>
+                                <p>{{ blog.post_excerpt|slice(0, 85) }}...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% else %}
+                <div class="all-press-release-item blog-card">Loading Blog...</div>
+            {% endfor %}
+        </div>
+        <div id="all-press-release-navigation" class="all-press-release-navigation" data-posts-per-page="{{ posts_per_page }}" data-nonce="{{ nonce }}">{{ page_nav_html }}</div>
+    </div>
+</section>
+<div class="all-press-release-load-spinner hide"></div>

@@ -1,0 +1,44 @@
+<section class="three-posts-row-by-category-section">
+    <div class="container">
+        <div class="three-posts-row-by-category-header">
+            <div class="three-posts-row-by-category-header-left">
+                <h2>{{ title }}</h2>
+            </div>
+            <div class="three-posts-row-by-category-header-right mobile-hide">
+                <div class="three-posts-row-by-category-link">
+                    <a class="global-link" href="{{ link_url }}">{{ desktop_link_title }}</a>
+                </div>
+            </div>
+        </div>
+        <div class="three-posts-row-by-category-row">
+            <div class="three-posts-row-by-category-left">
+                {% for blog in blogs %}
+                    <div class="three-posts-row-by-category-item displayed-post" data-post-id="{{ blog.id }}">
+                        <a href="{{ blog.link }}">
+                            <div class="three-posts-row-by-category-item-inner">
+                                <div class="blog-image" style="background-image: url('{{ blog.thumbnail.src|resizeDynamic(400, 200) }}');"></div>
+                                <div class="blog-info">
+                                    <div class="blog-category {{ blog.category.slug }}">{{ blog.category }}</div>
+                                    <h3>{{ blog.post_title }}</h3>
+                                    {% if is_mobile %}
+                                        <p>{{ blog.post_excerpt|slice(0, 85) }}...</p>
+                                    {% else %}
+                                        <p>{{ blog.post_excerpt|slice(0, 100) }}...</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% else %}
+                    No Blogs have been found.
+                {% endfor %}
+            </div>
+            <div class="three-posts-row-by-category-right">
+                <a href="{{ banner_ad.link_url }}"><div class="popular-image" style="background-image:url('{{ banner_ad.image.src|resizeDynamic(banner_ad.image.width) }}')"></div></a>
+            </div>                   
+        </div>
+        <div class="three-posts-row-by-category-link mobile-show">
+            <a class="global-link" href="{{ link_url }}">{{ mobile_link_title }}</a>
+        </div>
+    </div>
+</section>

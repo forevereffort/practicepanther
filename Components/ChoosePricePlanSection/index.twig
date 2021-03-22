@@ -1,0 +1,83 @@
+<section class="choose-price-plan-section">
+    <div class="container">
+        <div class="page-title-content">
+            {{ content|e('wp_kses_post') }}
+        </div>
+        <div class="price-method-row">
+            <div class="price-method" data-attr="monthly">MONTHLY</div>
+            <div class="price-method-switch right"></div>
+            <div class="price-method choosed" data-attr="annually">ANNUALLY<span>{{ save_amount }}</span></div>
+        </div>
+        <div class="price-plan-row">
+            <div class="price-plan-col">
+                <div class="price-plan-inner">
+                    <div class="price-plan-content">
+                        <h3>SOLO</h3>
+                        <div class="price-value">
+                            <div class="price-monthly hide">
+                                <h2>{{ plans.solo.monthly_price|e }}</h2>
+                                <p>per user/month</p>
+                            </div>
+                            <div class="price-annually">
+                                <h2>{{ plans.solo.annually_price|e }}</h2>
+                                <p>per user/month</p>
+                            </div>
+                        </div>
+                        {{ plans.solo.features|e('wp_kses_post') }}
+                    </div>
+                    <div class="price-plan-btn">
+                        <a href="{{ plans.solo.link.url }}">{{ plans.solo.link.title }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="price-plan-col">
+                <div class="price-plan-inner">
+                    <div class="price-plan-content">
+                        <h3>ESSENTIAL</h3>
+                        <div class="price-value">
+                            <div class="price-monthly hide">
+                                <h2>{{ plans.essential.monthly_price|e }}</h2>
+                                <p>per user/month</p>
+                            </div>
+                            <div class="price-annually">
+                                <h2>{{ plans.essential.annually_price|e }}</h2>
+                                <p>per user/month</p>
+                            </div>
+                        </div>
+                        {{ plans.essential.features|e('wp_kses_post') }}
+                    </div>
+                    <div class="price-plan-btn">
+                        <a href="{{ plans.essential.link.url }}">{{ plans.essential.link.title }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="price-plan-col popular">
+                <div class="price-plan-inner">
+                    <div class="popular-ribbon">
+                        <span>POPULAR</span>
+                    </div>
+                    <div class="price-plan-content">
+                        <h3>BUSINESS</h3>
+                        <div class="price-value">
+                            <div class="price-monthly hide">
+                                <h2>{{ plans.business.monthly_price|e }}</h2>
+                                <p>per user/month</p>
+                            </div>
+                            <div class="price-annually">
+                                <h2>{{ plans.business.annually_price|e }}</h2>
+                                <p>per user/month</p>
+                            </div>
+                        </div>
+                        {{ plans.business.features|e('wp_kses_post') }}
+                    </div>
+                    <div class="price-plan-btn">
+                        <a href="{{ plans.business.link.url }}">{{ plans.business.link.title }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="choose-price-plan-link">
+            <a id="compare-plans-link" class="global-link" href="#price-table-section">Compare Plans</a>
+        </div>
+    </div>
+</section>

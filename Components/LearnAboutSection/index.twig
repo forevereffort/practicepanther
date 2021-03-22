@@ -1,0 +1,13 @@
+<section class="learn-about-section">
+    <div class="container">
+        <div class="learn-about-row">
+            <div class="learn-about-left" style="background-image: url('{{ image.src }}');"></div>
+            <div class="learn-about-right">
+                {{ content|e('wp_kses_post') }}
+                <div class="learn-about-link">
+                    <a href="{{ link_url }}" class="global-button green">{{ link_title }}</a>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

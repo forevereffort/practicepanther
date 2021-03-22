@@ -1,0 +1,79 @@
+.single-legal-term-search-form-section {
+  background-color: #c3e8f8;
+  padding: 87px 0 106px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.single-legal-term-search-form-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 18px;
+    color: $black;
+    max-width: 512px;
+    margin: 9px auto 0;
+  }
+}
+
+.single-legal-term-search-form-row {
+  max-width: 600px;
+  margin: 37px auto 0;
+  position: relative;
+
+  input[type=text] {
+    border: 0;
+    color: $grey;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.05);
+    background-color: $white;
+    padding: 15px 49px 16px;
+
+    &::placeholder {
+      overflow: visible;
+    }
+  }
+
+  input[type=submit] {
+    background-color: transparent;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9Ii0yOTYgMzg4IDE4IDE4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IC0yOTYgMzg4IDE4IDE4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMjUyNTI1O30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNLTI3OC40LDQwMy42bC0zLjctMy43YzAuOS0xLjMsMS4zLTIuNywxLjMtNC4zYzAtMS0wLjItMi0wLjYtM2MtMC40LTAuOS0wLjktMS44LTEuNi0yLjQNCgljLTAuNy0wLjctMS41LTEuMi0yLjQtMS42Yy0wLjktMC40LTEuOS0wLjYtMy0wLjZjLTEsMC0yLDAuMi0zLDAuNmMtMC45LDAuNC0xLjgsMC45LTIuNCwxLjZjLTAuNywwLjctMS4yLDEuNS0xLjYsMi40DQoJYy0wLjQsMC45LTAuNiwxLjktMC42LDNjMCwxLDAuMiwyLDAuNiwzczAuOSwxLjgsMS42LDIuNGMwLjcsMC43LDEuNSwxLjIsMi40LDEuNmMwLjksMC40LDEuOSwwLjYsMywwLjZjMS42LDAsMy0wLjQsNC4zLTEuMw0KCWwzLjcsMy43YzAuMywwLjMsMC42LDAuNCwxLDAuNGMwLjQsMCwwLjctMC4xLDEtMC40YzAuMy0wLjMsMC40LTAuNiwwLjQtMUMtMjc4LDQwNC4yLTI3OC4xLDQwMy45LTI3OC40LDQwMy42eiBNLTI4NSwzOTkNCgljLTEsMC45LTIuMSwxLjQtMy40LDEuNGMtMS4zLDAtMi41LTAuNS0zLjQtMS40Yy0wLjktMC45LTEuNC0yLjEtMS40LTMuNGMwLTEuMywwLjUtMi41LDEuNC0zLjRjMC45LTAuOSwyLjEtMS40LDMuNC0xLjQNCgljMS4zLDAsMi41LDAuNSwzLjQsMS40YzAuOSwwLjksMS40LDIuMSwxLjQsMy40Qy0yODMuNSwzOTctMjg0LDM5OC4xLTI4NSwzOTlMLTI4NSwzOTl6Ii8+DQo8L3N2Zz4NCg==');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    height: 15px;
+    left: 23px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 17px;
+    width: 15px;
+  }
+}
+
+@media (max-width : 1000px) {
+  .single-legal-term-search-form-section {
+    padding: 62px 20px 70px;
+    background-image: none !important;
+  }
+    
+  .single-legal-term-search-form-content {
+    h2 {
+      font-size: 30px;
+    }
+    
+    p {
+      display: none;
+    }
+  }
+}

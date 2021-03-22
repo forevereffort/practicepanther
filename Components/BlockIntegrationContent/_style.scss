@@ -1,0 +1,15 @@
+.related-integration-wrapper {
+  align-items: center;
+  display: flex !important;
+  justify-content: center;
+}
+
+.our-plan-icon.related-integration-icon {
+  background-image: none !important;
+  height: auto;
+  text-align: center;
+
+  img {
+    display: inline-block;
+  }
+}

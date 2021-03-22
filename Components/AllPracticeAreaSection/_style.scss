@@ -1,0 +1,75 @@
+.all-practice-area-section {
+  background-color: $pale-grey;
+  padding: 116px 0 104px;
+
+  h2 {
+    font-size: 30px;
+  }
+}
+
+.all-practice-area-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 53px -20px 0;
+}
+
+.all-practice-area-item {
+  padding: 20px;
+  width: 33.33333%;
+}
+
+.all-practice-area-icon {
+  background-color: #f6f6f6;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px 8px 0 0;
+  height: 112px;
+}
+
+.all-practice-area-content {
+  background-color: $white;
+  padding: 40px;
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+    margin-top: 13px;
+  }
+}
+
+.all-practice-area-link {
+  background-color: $white;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #dbdbdb;
+  padding: 12px 0 17px;
+  text-align: center;
+}
+
+.all-practice-area-load-button {
+  margin-top: 45px;
+  text-align: center;
+}
+
+@media (max-width : 1000px) {
+  .all-practice-area-section {
+    padding: 63px 0 70px;
+  }
+
+  .all-practice-area-row {
+    display: block;
+    margin: 44px 0 0;
+  }
+
+  .all-practice-area-item {
+    padding: 0;
+    width: 100%;
+  }
+
+  .all-practice-area-item + .all-practice-area-item {
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,19 @@
+<section class="three-external-link-column-section">
+    <div class="container">
+        <div class="three-external-link-column-row">
+            {% for item in items %}
+                <div class="three-external-link-column">
+                    <a href="{{ item.link_url }}">
+                        <div class="inner">
+                            <div class="external-link-image" style="background-image: url('{{ item.image.src|resizeDynamic(400, 200) }}');"></div>
+                            <div class="external-link-info">
+                                <h2>{{ item.title|e('wp_kses_post') }}</h2>
+                                <p>{{ item.excerpt|e('wp_kses_post') }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

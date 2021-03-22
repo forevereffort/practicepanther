@@ -1,0 +1,39 @@
+<section class="all-blog-section">
+    <div class="container">
+        <div class="all-blog-header">
+            <div class="all-blog-header-left">
+                <h2>{{ title }}</h2>
+            </div>
+            <div class="all-blog-header-right">
+                <div class="all-blog-link">
+                    <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+                </div>
+            </div>
+        </div>
+        <div id="all-blog-row" class="all-blog-row">
+            {% for index, blog in blogs %}
+                <div class="all-blog-item blog-card">
+                    <a href="{{ blog.link }}">
+                        <div class="inner">
+                            <div class="blog-image" style="background-image: url('{{ blog.thumbnail.src|resizeDynamic(400, 200) }}');"></div>
+                            <div class="blog-info">
+                                <div class="blog-category {{ blog.category.slug }}">{{ blog.category }}</div>
+                                <h3>{{ blog.title }}</h3>
+                                <p>{{ blog.post_excerpt|slice(0, 85) }}...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% if index == 2 %}
+                    <div class="all-blog-item mobile-hide">
+                        <a href="{{ banner_ad.link_url }}"><div class="inner inner-image" style="background-image: url('{{ banner_ad.image.src|resizeDynamic(banner_ad.image.width) }}');"></div></a>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="all-blog-item blog-card">Loading Blog...</div>
+            {% endfor %}
+        </div>
+        <div id="all-blog-navigation" class="all-blog-navigation" data-banner-image-url="{{ banner_ad.image.src|resizeDynamic(banner_ad.image.width) }}" data-banner-link-url="{{ banner_ad.link_url }}" data-posts-per-page="{{ posts_per_page }}" data-nonce="{{ nonce }}">{{ page_nav_html }}</div>
+    </div>
+</section>
+<div class="all-blog-load-spinner hide"></div>

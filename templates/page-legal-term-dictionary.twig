@@ -1,0 +1,7 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  {{ renderComponent('SingleLegalTermSearchFormSection', { search_page: legal_term_search_page, background: legal_term_search_form_background, content: legal_term_search_form_content }) }}
+  {{ renderComponent('LegalTermDictionarySection') }}
+  {{ renderComponent('HomeStartTrialSection', { content: legal_term_footer_form_content, gravity_grom_shortcode: legal_term_footer_gravity_grom_shortcode }) }}
+{% endblock %}

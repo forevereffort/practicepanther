@@ -1,0 +1,20 @@
+<section class="our-plans-section {% if is_gray_background %} gray {% endif %}">
+    <div class="container">
+        <h2>{{ section_title|e }}</h2>
+        <div class="our-plans-row">
+            {% for plan in plans %}
+                <div class="our-plan-item">
+                    <a class="our-plan-inner" href="{{ plan.url }}">
+                        <div class="our-plan-icon" style="background-image: url('{{ plan.icon }}');"></div>
+                        <div class="our-plan-title">{{ plan.title|e }}</div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        {% if link_title %}
+            <div class="our-plans-link">
+                <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+            </div>
+        {% endif %}
+    </div>
+</section>

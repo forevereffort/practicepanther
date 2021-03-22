@@ -1,0 +1,45 @@
+<section class="block-image-3col-text-section {% if is_gray_background %} gray {% endif %}">
+    <div class="container">
+        <div class="title-info">
+            {{ title|e('wp_kses_post') }}
+        </div>
+        <div class="image-col">
+            {% if retina_image %}
+                <img
+                    class="lazyload"
+                    src="{{ placeholderImage(image.width, image.height) }}"
+                    data-src="{{ image.src|resizeDynamic(image.width) }}"
+                    data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                    data-sizes="auto"
+                    alt="{{ image.alt|e }}"
+                >
+            {% else %}
+                <img
+                    class="lazyload"
+                    src="{{ placeholderImage(image.width, image.height) }}"
+                    data-src="{{ image.src|resizeDynamic(image.width) }}"
+                    alt="{{ image.alt|e }}"
+                >
+            {% endif %}
+        </div>
+
+        {% if hide_content_row == false %}
+            <div class="block-image-3col-text-row">
+                <div class="content-col">
+                    {{ contents.column_1|e('wp_kses_post') }} 
+                </div>
+                <div class="content-col">
+                    {{ contents.column_2|e('wp_kses_post') }} 
+                </div>
+                <div class="content-col">
+                    {{ contents.column_3|e('wp_kses_post') }} 
+                </div>
+            </div>
+        {% endif %}
+        {% if link_title %}
+            <div class="block-link">
+                <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+            </div>
+        {% endif %}
+    </div>
+</section>

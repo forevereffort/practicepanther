@@ -1,0 +1,30 @@
+<section class="all-practice-area-section">
+    <div class="container">
+        <h2>{{ title }}</h2>
+        <div class="all-practice-area-row">
+            {% set index = 0 %}
+            {% for blog in blogs %}
+                {% set index = index + 1 %}
+                <div class="all-practice-area-item {% if index > blogs_per_page %} mobile-hide {% endif %}" data-index="{{ index }}">
+                    <div class="all-practice-area-info">
+                        <div class="all-practice-area-icon" style="background-image: url('{{ blog.meta('icon_image').src }}');"></div>
+                        <div class="all-practice-area-content">
+                            <h3>{{ blog.title }}</h3>
+                            <p>{{ blog.practice_area_excerpt }}</p>
+                        </div>
+                        <div class="all-practice-area-link">
+                            <a class="global-link" href="{{ blog.link }}">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                Nothing
+            {% endfor %}
+        </div>
+        {% if blog_counts > blogs_per_page %}
+            <div class="all-practice-area-load-button mobile-show">
+                <a class="global-link" href="#" data-current-page="{{ blogs_per_page }}" data-posts-per-page="{{ blogs_per_page }}" data-total-pages="{{ blog_counts }}">Load More Practice areas</a>
+            </div>
+        {% endif %}
+    </div>
+</section>

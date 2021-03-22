@@ -1,0 +1,48 @@
+<section class="two-trainers-column-section">
+    <div class="container">
+        <div class="two-trainers-title">
+            {{ title|e('wp_kses_post') }}
+        </div>
+        <div class="two-trainers-column-row">
+            {% for trainer in trainers %}
+                <div class="two-trainers-column">
+                    <div class="inner">
+                        <div class="two-trainers-image">
+                            <div class="two-trainers-image-inner">
+                                {% if trainer.retina_image %}
+                                    <img
+                                        class="lazyload"
+                                        src="{{ placeholderImage(210 * trainer.image.width / trainer.image.height, 210) }}"
+                                        data-src="{{ trainer.image.src|resizeDynamic(210 * trainer.image.width / trainer.image.height, 210) }}"
+                                        data-srcset="{{ trainer.image.src|resizeDynamic(210 * trainer.image.width / trainer.image.height, 210) }} 1x, {{ trainer.retina_image.src|resizeDynamic(420 * trainer.retina_image.width / trainer.retina_image.height, 420) }} 2x"
+                                        data-sizes="auto"
+                                        alt="{{ trainer.image.alt|e }}"
+                                    >
+                                {% else %}
+                                    <img
+                                        class="lazyload"
+                                        src="{{ placeholderImage(210 * trainer.image.width / trainer.image.height, 210) }}"
+                                        data-src="{{ trainer.image.src|resizeDynamic(210 * trainer.image.width / trainer.image.height, 210) }}"
+                                        alt="{{ trainer.image.alt|e }}"
+                                    >
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="two-trainers-info">
+                            <h3>{{ trainer.train_time|e('wp_kses_post') }}</h3>
+                            <h2>{{ trainer.title|e('wp_kses_post') }}</h2>
+                            {% if is_mobile %}
+                                <p>{{ trainer.excerpt|slice(0, 85)|e('wp_kses_post') }}...</p>
+                            {% else %}
+                                <p>{{ trainer.excerpt|e('wp_kses_post') }}</p>
+                            {% endif %}
+                            <div class="two-trainers-link">
+                                <a href="{{ trainer.link_url }}">SCHEDULE TRAINING</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

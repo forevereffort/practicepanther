@@ -1,0 +1,7 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  {% for component in post.meta('pageAffiliatesComponents') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+{% endblock %}

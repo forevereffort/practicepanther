@@ -1,0 +1,8 @@
+<section class="home-hero-section {% if is_wide_title %} wide-title {% endif %}">
+    <div class="page-title-content">
+        {{ content|e('wp_kses_post') }}
+    </div>
+    <div class="home-hero-form start-free-trial-form">
+        {{ gravity_grom_shortcode|shortcodes }}
+    </div>
+</section>

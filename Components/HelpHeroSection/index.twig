@@ -1,0 +1,25 @@
+<section class="help-hero-section">   
+    <div class="help-hero-section-background mobile-hide" style="background-image: url('{{ desktop_background_image.src|resizeDynamic(desktop_background_image.width) }}');"></div>
+    <div class="help-hero-section-background mobile-show" style="background-image: url('{{ mobile_background_image.src|resizeDynamic(mobile_background_image.width) }}');"></div>
+    <div class="container">
+        {{ title|e('wp_kses_post') }}
+        <div class="help-hero-form">
+            <form target="_blank" method="GET" action="https://support.practicepanther.com/en/?">
+                <input type="text" name="q" placeholder="Search the Help Center">
+                <input type="submit" value="">
+            </form>
+        </div>
+        <div class="help-hero-buttons">
+            <ul>
+                <li class="mobile-hide">
+                    <span>{{ buttons_group_title|e('wp_kses_post') }}</span>
+                </li>
+                {% for button in buttons %}
+                    <li>
+                        <a href="{{ button.link_url }}">{{ button.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section> 

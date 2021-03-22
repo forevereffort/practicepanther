@@ -1,0 +1,747 @@
+.post-fixed-line {
+  background-color: $green;
+  height: 5px;
+  left: 0;
+  position: fixed;
+  top: 70px;
+}
+
+//for preview mode
+.admin-bar .post-fixed-line {
+  top: 70px + 32px; // 32px is admin bar height
+}
+
+.post-featured-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 365px;
+}
+
+.post-title {
+  margin-top: 87px;
+
+  h1 {
+    font-size: 40px;
+  }
+}
+
+.post-author {
+  @include clearfix();
+  margin-top: 28px;
+}
+
+.post-author-avatar {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  float: left;
+  height: 47px;
+  width: 47px;
+}
+
+.post-author-info {
+  float: left;
+  margin-left: 20px;
+}
+
+.post-author-name {
+  color: $grey;
+  font-size: 18px;
+  font-weight: $font-weight-medium;
+
+  a {
+    color: inherit;
+  }
+}
+
+.post-date {
+  color: $grey;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.post-category-list {
+  margin-top: 30px;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    border: solid 1px #e4e4e4;
+    border-radius: 6px;
+    color: $blue;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: $font-weight-medium;
+    letter-spacing: 1.39px;
+    padding: 8px 15px;
+    text-transform: uppercase;
+  }
+
+  li+li {
+    margin-left: 8px;
+  }
+}
+
+.post-content {
+  margin-top: 64px;
+
+  img {
+    height: auto;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  > h2:not(:first-child) {
+    margin-top: 59px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  > h3:not(:first-child) {
+    margin-top: 61px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  > h4:not(:first-child) {
+    margin-top: 61px;
+  }
+
+  h5 {
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+  }
+
+  > h5:not(:first-child) {
+    margin-top: 63px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+  }
+
+  > p:not(:first-child) {
+    margin-top: 24px;
+  }
+
+  figure {
+    margin: 0;
+
+    img {
+      border-radius: 8px;
+      max-width: 100%;
+    }
+  }
+
+  figcaption {
+    color: $grey;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 13px;
+    text-align: left;
+  }
+
+  .wp-block-image {
+    margin-bottom: 41px;
+  }
+
+  .is-style-mobile-image {
+    display: none;
+  }
+
+  .is-style-shadow-image {
+    img {
+      box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .is-style-desktop-shadow-image {
+    img {
+      box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .is-style-mobile-shadow-image {
+    display: none;
+
+    img {
+      box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  div.wp-block-image {
+    text-align: center;
+
+    .alignleft {
+      float: left;
+      margin-right: 24px;
+    }
+
+    .aligncenter {
+      display: inline-block;
+    }
+
+    .alignright {
+      float: right;
+      margin-left: 24px;
+    }
+  }
+    
+  > .wp-block-image:not(:first-child) {
+    margin-top: 48px;
+  }
+
+  .wp-block-custom-blocks-quote {
+    margin: 74px 0 64px;
+    padding: 50px 0 0 110px;
+    position: relative;
+
+    &::before {
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMjg1LjQgMzgyLjIgMzAuMiAyMy44IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IC0yODUuNCAzODIuMiAzMC4yIDIzLjg7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBkPSJNLTI3NC41LDQwNS45aC0xMXYtNy45YzAtMy4yLDAuMy01LjcsMC44LTcuNWMwLjYtMS44LDEuNi0zLjUsMy4xLTQuOWMxLjUtMS41LDMuNC0yLjYsNS44LTMuNGwyLjEsNC41IGMtMi4yLDAuNy0zLjgsMS43LTQuNywzYy0xLDEuMy0xLjUsMy0xLjUsNS4yaDUuM1Y0MDUuOXogTS0yNTYuMSw0MDUuOWgtMTF2LTcuOWMwLTMuMiwwLjMtNS43LDAuOC03LjVjMC42LTEuOCwxLjYtMy41LDMuMS00LjkgYzEuNS0xLjUsMy40LTIuNiw1LjgtMy40bDIuMSw0LjVjLTIuMiwwLjctMy44LDEuNy00LjcsM2MtMSwxLjMtMS41LDMtMS41LDUuMmg1LjNWNDA1Ljl6IiBmaWxsPSIjMDMzN0NDIi8+PC9zdmc+');
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: '';
+      height: 28px;
+      left: 0;
+      position: absolute;
+      top: -18px;
+      width: 35px;
+    }
+
+    &::after {
+      background-color: $blue;
+      content: '';
+      height: 1px;
+      left: 52px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    p {
+      color: $black;
+      font-size: 18px;
+    }
+
+    h5 {
+      font-size: 16px;
+      font-weight: $font-weight-bold;
+      margin-top: 33px;
+    }
+        
+    cite {
+      color: $warm-grey-two;
+      font-size: 14px;
+      font-style: normal;
+      margin-top: 5px;
+    }
+  }
+
+  ul {
+    list-style: disc;
+    margin-top: 42px;
+    padding-left: 56px;
+        
+    ul {
+      list-style: circle;
+      margin-top: 0;
+
+      ul {
+        list-style: disc;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: listStyle1;
+    list-style: none;
+    margin-top: 42px;
+    padding: 0 0 0 40px;
+
+    li {
+      counter-increment: listStyle1;
+      padding-left: 30px;
+      position: relative;
+      
+      &::before {
+        content: counter(listStyle1, decimal) '.';
+        font-weight: $font-weight-medium;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    ol {
+      counter-reset: listStyle2;
+      margin-top: 0;
+      padding-left: 60px;
+      
+      li {
+        counter-increment: listStyle2;
+        
+        &::before {
+          content: counter(listStyle2, lower-alpha) '.';
+        }
+      }
+      
+      ol {
+        counter-reset: listStyle3;
+
+        li {
+          counter-increment: listStyle3;
+
+          &::before {
+            content: counter(listStyle3, lower-roman) '.';
+          }
+        }
+      }
+    }
+  }
+
+  li {
+    color: $slate-grey;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 13px;
+    padding-left: 3px;
+    position: relative;
+  }
+
+  a {
+    color: $blue;
+    font-weight: $font-weight-medium;
+  }
+
+  sup {
+    font-size: 9px;
+    font-weight: $font-weight-medium;
+    margin-left: 1px;
+    top: -14px;
+  }
+}
+
+.post-references {
+  margin-top: 62px;
+
+  h5 {
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.post-ref-row {
+  display: flex;
+}
+
+.post-ref-row {
+  padding-top: 27px;
+}
+
+.post-ref-row+.post-ref-row {
+  padding-top: 18px;
+}
+
+.post-ref-num {
+  color: $slate-grey;
+  font-size: 9px;
+  font-weight: $font-weight-medium;
+}
+
+.post-ref-content {
+  flex: 1;
+  padding: 6px 0 0 8px;
+
+  p {
+    color: $slate-grey;
+    font-size: 14px;
+
+    a {
+      color: $blue;
+    }
+  }
+}
+
+.post-related-section {
+  background-color: $pale-grey;
+  padding: 116px 0 124px;
+}
+
+.post-subscribe-section {
+  margin-top: 68px;
+}
+
+.post-subscribe-wrapper {
+  background-image: url('../assets/images/logo-subscribe.svg');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 152px auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.17);
+}
+
+.post-subscribe-inner {
+  margin-left: 225px;
+  max-width: 470px;
+  padding: 35px 0 39px;
+
+  h2 {
+    font-size: 26px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  .start-free-trial-form {
+    margin: 25px 0 0;
+    max-width: 417px;
+
+    input[type=text] {
+      padding: 15px 225px 16px 30px;
+    }
+    
+    input[type=submit] {
+      padding: 10px 20px 12px;
+    }
+  }
+}
+
+.post-social-sharing-section {
+  margin-top: 70px;
+
+  ul {
+    align-items: center;
+    display: flex;
+  }
+
+  li+li {
+    margin-left: 33px;
+  }
+}
+
+.post-author-detail-section {
+  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+  display: flex;
+  margin: 26px 0 123px;
+  padding: 45px 0 47px;
+}
+
+.post-author-detail-avatar {
+  padding-top: 4px;
+  width: 120px;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.post-author-detail-info {
+  flex: 1;
+  padding-left: 46px;
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+    margin-top: 16px;
+  }
+
+  .post-author-detail-link {
+    margin-top: 24px;
+  }
+}
+
+.post-footer-image-section {
+  padding: 0 0 120px;
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+.post-popup-dialog {
+  background-color: $white;
+  border-radius: 8px 0 0 8px;
+  bottom: 170px;
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.17);
+  position: fixed;
+  right: 0;
+  transition: right 0.5s;
+  z-index: 10;
+
+  &.post-popup-show {
+    right: 0 !important;
+  }
+
+  img {
+    border-radius: 8px 0 0 8px;
+    max-width: initial;
+  }
+}
+
+.post-popup-dialog-close {
+  cursor: pointer;
+  height: 15px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  width: 15px;
+
+  &::before,
+  &::after {
+    background-color: $black;
+    content: '';
+    height: 2px;
+    left: -2px;
+    position: absolute;
+    top: 6px;
+    width: 18px;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@media (max-width : 1000px) {
+  .post-fixed-line {
+    top: 50px;
+  }
+
+  //for preview mode
+  .admin-bar .post-fixed-line {
+    top: 50px + 32px; // 32px is admin bar height
+  }
+
+  .post-featured-image {
+    height: 216px;
+  }
+
+  .post-title {
+    margin-top: 63px;
+
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  .post-author-avatar {
+    height: 42px;
+    width: 42px;
+  }
+
+  .post-author-info {
+    margin-left: 17px;
+  }
+
+  .post-author-name {
+    font-size: 16px;
+  }
+  
+  .post-date {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .post-category-list {
+    margin-top: 20px;
+
+    li {
+      margin: 10px 6px 0 0 !important;
+    }
+
+    li+li {
+      margin: 0;
+    }
+  }
+
+  .post-content {
+    margin-top: 44px;
+
+    h2 {
+      font-size: 24px;
+    }
+  
+    h3 {
+      font-size: 22px;
+    }
+  
+    p {
+      font-size: 15px;
+    }
+
+    sup {
+      top: -12px;
+    }
+
+    div.wp-block-image {
+      .alignleft {
+        float: none;
+        margin-right: 0;
+      }
+
+      .aligncenter {
+        display: block;
+      }
+  
+      .alignright {
+        float: none;
+        margin-left: 0;
+      }
+    }
+
+    .is-style-desktop-image {
+      display: none;
+    }
+
+    .is-style-mobile-image {
+      display: block;
+    }
+
+    .is-style-desktop-shadow-image {
+      display: none;
+    }
+  
+    .is-style-mobile-shadow-image {
+      display: block;
+    }
+
+    .wp-block-custom-blocks-quote {
+      margin: 61px 0 54px;
+      padding: 45px 0 0 42px;
+  
+      &::before {
+        height: 23px;
+        top: -15px;
+        width: 30px;
+      }
+  
+      &::after {
+        left: 42px;
+      }
+  
+      p {
+        font-size: 16px;
+      }
+    }
+
+    ul {
+      margin-top: 33px;
+      padding-left: 17px;
+    }
+
+    li {
+      font-size: 15px;
+      margin-top: 19px;
+      padding-left: 4px;
+    }
+
+    ol {
+      margin-top: 33px;
+      padding-left: 0;
+
+      li {
+        padding-left: 26px;
+      }
+
+      ol {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .post-subscribe-section {
+    margin-top: 70px;
+  }
+
+  .post-subscribe-wrapper {
+    background-image: none;
+  }
+
+  .post-subscribe-inner {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 64px 20px 70px;
+    text-align: center;
+
+    .start-free-trial-form {
+      input[type=text] {
+        padding: 12px 26px 16px;
+      }
+    }
+  }
+
+  .post-social-sharing-section {
+    margin-top: 155px;
+  }
+
+  .post-author-detail-section {
+    display: block;
+    margin-bottom: 70px;
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .post-author-detail-avatar {
+    padding-top: 0;
+    width: 100%;
+  }
+
+  .post-author-detail-info {
+    margin-top: 26px;
+    padding-left: 0;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    .post-author-detail-link {
+      margin-top: 31px;
+    }
+  }
+
+  .post-footer-image-section {
+    padding-bottom: 70px;
+  }
+
+  .post-related-section {
+    padding: 63px 0 67px;
+  }
+
+  .post-popup-dialog {
+    bottom: 50px;
+  }
+}
+
+@media (max-width : 782px) {
+  //for preview mode
+  .admin-bar .post-fixed-line {
+    top: 50px + 46px; // 46px is admin bar height
+  }
+}

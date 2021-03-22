@@ -1,0 +1,46 @@
+<footer>
+    <div class="container">
+        <div class="footer-logo">
+            <a href="{{ site.link }}"><img src="{{ footer_logo.src }}" alt="{{ footer_logo.alt }}"></a>
+        </div>
+        <div class="footer-row">
+            <div class="footer-col footer-phone-col">
+                {{ footer_widget_1 }}
+            </div>
+            <div class="footer-col">
+                {{ footer_widget_2 }}
+            </div>
+            <div class="footer-col">
+                {{ footer_widget_3 }}
+            </div>
+            <div class="footer-col">
+                {{ footer_widget_4 }}
+            </div>
+            <div class="footer-col footer-social-col">
+                {{ footer_widget_5 }}
+            </div>
+        </div>
+        <div class="footer-mobile-row">
+            <div class="footer-mobile-phone-col">
+                {{ footer_widget_1 }}
+            </div>
+            <div class="footer-mobile-social-col">
+                {{ footer_widget_5 }}
+            </div>
+        </div>
+        <div class="footer-row footer-info">
+            <div class="footer-descrption">
+                <p>Copyright &copy;2020 PracticePanther. All rights reserved.</p>
+            </div>
+            <nav class="footer-nav">
+                <ul class="footer-menu">
+                    {% for item in footer_menu.items %}
+                        <li class="menu-item {{ item.classes | join(' ') }}">
+                            <a class="menu-link" href="{{ item.link }}">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>

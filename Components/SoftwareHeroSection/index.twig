@@ -1,0 +1,37 @@
+<section class="software-hero-section {% if is_wide_space %} is_wide_space {% endif %}">
+    <div class="software-hero-row">
+        <div class="software-hero-col">
+            <div class="content-col">
+                <div class="page-title-content"> 
+                    {{ content|e('wp_kses_post') }}
+                </div>
+                {% if gravity_grom_shortcode %}
+                    <div class="software-hero-form start-free-trial-form">
+                        {{ gravity_grom_shortcode|shortcodes }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="software-hero-col {% if hide_image_on_mobile %} mobile-hide {% endif %}">
+            <div class="image-col">
+                {% if retina_image %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                        data-sizes="auto"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% else %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

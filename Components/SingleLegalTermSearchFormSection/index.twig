@@ -1,0 +1,11 @@
+<section class="single-legal-term-search-form-section" style="background-image: url('{{ background.src|resizeDynamic(background.width) }}')">
+    <div class="single-legal-term-search-form-content">
+        {{ content|e('wp_kses_post') }}
+    </div>
+    <div class="single-legal-term-search-form-row">
+        <form method="GET" action="{{ search_page.link }}">
+            <input type="text" name="search" placeholder="Search the Legal Dictionary">
+            <input type="submit" value="" >
+        </form>
+    </div>
+</section>

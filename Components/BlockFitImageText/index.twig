@@ -1,0 +1,53 @@
+<section class="block-fit-image-text-section {% if is_gray_background %} gray {% endif %}">
+    <div class="container">
+        <div class="title-info">
+            {{ title|e('wp_kses_post') }}
+        </div>
+        <div class="block-fit-image-text-row">
+            <div class="mobile-image-col">
+                {% if retina_image %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                        data-sizes="auto"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% else %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% endif %}
+            </div>
+            <div class="content-col">
+                {{ content|e('wp_kses_post') }} 
+            </div>
+            <div class="image-col">
+                {% if retina_image %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                        data-sizes="auto"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% else %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% endif %}
+            </div>
+        </div>
+        <div class="block-link">
+            <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+        </div>
+    </div>
+</section>

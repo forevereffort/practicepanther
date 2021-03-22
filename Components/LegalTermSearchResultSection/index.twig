@@ -1,0 +1,15 @@
+<section class="legal-term-search-result-section">
+    <div class="container">
+        <div class="legal-term-search-result-title">
+            <h1>Search Results for “{{ search_key }}”</h1>
+            <p>{{ search_count }} search results found</p>
+        </div>
+        {% if search_legal_terms_list %}
+            <div class="legal-term-search-result-row">
+                {% for item in search_legal_terms_list %}
+                    <div class="legal-term-search-result-col"><a href="{{ item.link }}">{{ item.post_title|e('wp_kses_post') }}</a></div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>

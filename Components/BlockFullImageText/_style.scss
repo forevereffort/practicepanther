@@ -1,0 +1,167 @@
+.block-full-image-text-section {
+  padding: 120px 0 100px;
+
+  .page-template-page-about-us & {
+    padding-top: 0;
+  }
+
+  &.gray {
+    background-color: $gray-background-color;
+  }
+}
+
+.block-full-image-text-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block-full-image-text-col {
+  width: 50%;
+
+  .image-col {
+    float: right;
+    overflow: hidden;
+
+    img {
+      max-width: none;
+    }
+  }
+
+  .mobile-image-col {
+    @include clearfix();
+    display: none;
+    margin-top: 40px;
+    overflow: hidden;
+    text-align: center;
+
+    img {
+      max-width: none;
+      width: 400px;
+    }
+  }
+
+  .content-col {
+    max-width: $container-width / 2;
+    padding-left: 80px;
+  }
+
+  .title-info {
+    h2 {
+      font-size: 40px;
+    }
+
+    p {
+      color: $slate-grey;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+
+  .detail-info {
+    padding-top: 12px;
+
+    h3 {
+      font-size: 18px;
+      margin-top: 21px;
+    }
+
+    em {
+      color: $blue;
+      cursor: pointer;
+      font-style: normal;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    p {
+      color: $slate-grey;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+  }
+
+  .block-link {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width : 1210px) {
+  .block-full-image-text-col {
+    .content-col {
+      max-width: none;
+      padding-right: 48px;
+    }
+  }
+}
+
+@media (max-width : 1000px) {
+  .block-full-image-text-row {
+    display: block;
+  }
+  
+  .block-full-image-text-section {
+    padding: 76px 20px 80px;
+  }
+
+  .block-full-image-text-col {
+    float: none;
+    width: 100%;
+
+    .mobile-image-col {
+      display: block;
+    }
+
+    .content-col {
+      padding: 0;
+    }
+
+    .title-info {
+      h2 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    .detail-info {
+      margin-top: 40px;
+      padding-top: 0;
+
+      h3 {
+        font-size: 16px;
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 15px;
+        margin-top: 8px;
+      }
+
+      p+h3 {
+        margin-top: 26px;
+      }
+    }
+
+    .block-link {
+      margin-top: 33px;
+    }
+  }
+}
+
+@media (max-width : 500px) {
+  .block-full-image-text-col {
+    .mobile-image-col {
+      margin-left: -20px;
+      
+      img {
+        float: right;
+      }
+    }
+  }
+}

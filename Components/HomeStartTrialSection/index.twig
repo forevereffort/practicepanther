@@ -1,0 +1,11 @@
+<section class="home-trial-section">
+    <div class="home-trial-content">
+        <div class="home-trial-logo">
+            <img src="{{ image.src }}" alt="{{ image.alt }}">
+        </div>
+        {{ content|e('wp_kses_post') }}
+    </div>
+    <div class="home-trial-form start-free-trial-form">
+        {{ gravity_grom_shortcode|shortcodes }}
+    </div>
+</section>

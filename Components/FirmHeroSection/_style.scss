@@ -1,0 +1,50 @@
+.firm-hero-section {
+  padding: 136px 0 128px;
+  position: relative;
+
+  .content-col {
+    max-width: 520px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    color: $grey;
+    font-size: 18px;
+    margin-top: 16px;
+  }
+}
+
+.firm-hero-section-background {
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@media (max-width : 1000px) {
+  .firm-hero-section {
+    padding: 65px 0 330px;
+    text-align: center;
+  
+    .content-col {
+      max-width: 100%;
+    }
+  
+    h1 {
+      font-size: 30px;
+    }
+  
+    p {
+      font-size: 16px;
+      margin-top: 7px;
+    }
+  }
+}

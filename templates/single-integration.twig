@@ -1,0 +1,9 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  {% for component in post.meta('integrationComponents') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+
+  {{ renderComponent('BlockIntegrationContent', { post: post }) }}
+{% endblock %}

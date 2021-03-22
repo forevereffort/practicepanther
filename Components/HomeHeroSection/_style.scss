@@ -1,0 +1,50 @@
+.home-hero-section {
+  padding: 0 20px 115px;
+
+  &.wide-title {
+    .page-title-content {
+      max-width: 825px;
+
+      h1,
+      h2 {
+        font-size: 40px;
+      }
+
+      p {
+        max-width: 480px;
+      }
+    }
+  }
+}
+
+.home-hero-form {
+  margin-top: 34px;
+
+  .gform_confirmation_message {
+    color: $black;
+  }
+}
+
+@media (max-width : 900px) {
+  .home-hero-section {
+    padding-bottom: 70px;
+
+    &.wide-title {
+      .page-title-content {
+        h1,
+        h2 {
+          font-size: 30px;
+        }
+
+        p {
+          max-width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .home-hero-form {
+    margin-top: 23px;
+  }
+}

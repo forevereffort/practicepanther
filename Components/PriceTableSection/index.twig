@@ -1,0 +1,226 @@
+<section id="price-table-section" class="price-table-section">
+    <h2>{{ title }}</h2>
+    <div class="price-table-fixed-wrapper hide"> 
+        <div class="container">
+            <table class="price-table" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr class="price-header-row">
+                        <th class="price-title">
+                            <div class="price-switch-row">
+                                <div class="price-switch-label" data-attr="monthly">MONTHLY</div>
+                                <div class="price-switch-ctrl right"></div>
+                                <div class="price-switch-label choosed" data-attr="annually">ANNUALLY<span>{{ header.save }}</span></div>
+                            </div>
+                        </th>
+                        <th class="price-val">
+                            <h3>Solo</h3>
+                            <div class="price-value">
+                                <div class="price-monthly hide">
+                                    <h2>{{ header.solo_price.monthly|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                                <div class="price-annually">
+                                    <h2>{{ header.solo_price.annually|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th class="price-val">
+                            <h3>Essential</h3>
+                            <div class="price-value">
+                                <div class="price-monthly hide">
+                                    <h2>{{ header.essential_price.monthly|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                                <div class="price-annually">
+                                    <h2>{{ header.essential_price.annually|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th class="price-val gray-bkg">
+                            <div class="popular-mark">POPULAR</div>
+                            <h3>Business</h3>
+                            <div class="price-value">
+                                <div class="price-monthly hide">
+                                    <h2>{{ header.business_price.monthly|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                                <div class="price-annually">
+                                    <h2>{{ header.business_price.annually|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="price-table-header-wrapper"> 
+        <div class="container">
+            <table class="price-table" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr class="price-header-row">
+                        <th class="price-title">
+                            <div class="price-switch-row">
+                                <div class="price-switch-label" data-attr="monthly">MONTHLY</div>
+                                <div class="price-switch-ctrl right"></div>
+                                <div class="price-switch-label choosed" data-attr="annually">ANNUALLY<span>{{ header.save }}</span></div>
+                            </div>
+                        </th>
+                        <th class="price-val">
+                            <h3>Solo</h3>
+                            <div class="price-value">
+                                <div class="price-monthly hide">
+                                    <h2>{{ header.solo_price.monthly|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                                <div class="price-annually">
+                                    <h2>{{ header.solo_price.annually|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th class="price-val">
+                            <h3>Essential</h3>
+                            <div class="price-value">
+                                <div class="price-monthly hide">
+                                    <h2>{{ header.essential_price.monthly|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                                <div class="price-annually">
+                                    <h2>{{ header.essential_price.annually|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th class="price-val gray-bkg">
+                            <div class="popular-mark">POPULAR</div>
+                            <h3>Business</h3>
+                            <div class="price-value">
+                                <div class="price-monthly hide">
+                                    <h2>{{ header.business_price.monthly|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                                <div class="price-annually">
+                                    <h2>{{ header.business_price.annually|e }}</h2>
+                                    <p>per user/month</p>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="price-table-wrapper">
+        <div class="container">
+            <table class="price-table" border="0" cellspacing="0" cellpadding="0">
+                {% set table_count = 0 %}
+                {% for table in table_list %}
+                    {% set table_count = table_count + 1 %}
+                    <tbody>
+                        {% if table_count > 1 %}
+                        <tr class="price-space-row">
+                            <td colspan="3"></td>
+                            <td class="gray-bkg"></td>
+                        </tr>
+                        {% endif %}
+                        <tr class="price-bold-row">
+                            <td class="price-title-bold" colspan="3">{{ table.title }}</td>
+                            <td class="price-val gray-bkg"></td>
+                        </tr>
+                        {% if table.acf_fc_layout == 'check_type' %}
+                            {% set row_count = 0 %}
+                            {% for row in table.rows %}
+                                {% set row_count = row_count + 1 %}
+                                {% if row_count == 5 %}
+                                    </tbody>
+                                    <tbody id="price-body-{{ table_count }}" style="display:none">
+                                {% endif %}
+                                <tr class="price-normal-row">
+                                    <td class="price-title">
+                                        <div class="price-title-inner">
+                                            <i class="info-icon"></i><span>{{ row.title }}</span>
+                                            <div class="price-title-tip" style="display:none;"><p>{{ row.content }}</p></div>
+                                        </div>
+                                    </td>
+                                    <td class="price-val">
+                                        {% if row.solo %}
+                                            <i class="checked-icon"></i>
+                                        {% else %}
+                                            <i class="minus-icon"></i>
+                                        {% endif %}
+                                    </td>
+                                    <td class="price-val">
+                                        {% if row.essential %}
+                                            <i class="checked-icon"></i>
+                                        {% else %}
+                                            <i class="minus-icon"></i>
+                                        {% endif %}
+                                    </td>
+                                    <td class="price-val gray-bkg">
+                                        {% if row.business %}
+                                            <i class="checked-icon"></i>
+                                        {% else %}
+                                            <i class="minus-icon"></i>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            {% if row_count > 4 %}
+                                </tbody>
+                                <tbody>
+                                    <tr class="price-normal-row">
+                                        <td class="price-title" colspan="3">
+                                            <span class="price-title-view-more" data-table-index="{{ table_count }}"><span>SEE</span> ALL {{ table.title }}</span>
+                                        </td>
+                                        <td class="price-val gray-bkg"></td>
+                                    </tr>
+                            {% endif %}
+                        {% elseif table.acf_fc_layout == 'content_type' %}
+                            {% set row_count = 0 %}
+                            {% for row in table.rows %}
+                                {% set row_count = row_count + 1 %}
+                                {% if row_count == 5 %}
+                                    </tbody>
+                                    <tbody id="price-body-{{ table_count }}" style="display:none">
+                                {% endif %}
+                                <tr class="price-normal-row">
+                                    <td class="price-title">
+                                        <div class="price-title-inner">
+                                            <i class="info-icon"></i><span>{{ row.title.info }}</span>
+                                            <div class="price-title-tip" style="display:none;"><p>{{ row.title.content }}</p></div>
+                                        </div>
+                                    </td>
+                                    <td class="price-val">{{ row.solo.info }}</td>
+                                    <td class="price-val">{{ row.essential.info }}</td>
+                                    <td class="price-val gray-bkg">
+                                        <span class="price-val-inner">
+                                            <span class="dot-line">{{ row.business.info }}</span>
+                                            <div class="price-val-tip price-val-tip-arrow" style="display:none;"></div>
+                                            <div class="price-val-tip price-val-tip-content" style="display:none;"><p>{{ row.business.content }}</p></div>
+                                        </span>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            {% if row_count > 4 %}
+                                </tbody>
+                                <tbody>
+                                    <tr class="price-normal-row">
+                                        <td class="price-title" colspan="3">
+                                            <span class="price-title-view-more" data-table-index="{{ table_count }}"><span>SEE</span> ALL {{ table.title }}</span>
+                                        </td>
+                                        <td class="price-val gray-bkg"></td>
+                                    </tr>
+                            {% endif %}
+                        {% else %}
+                            Unsupported type
+                        {% endif %}
+                    </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+<section class="timeline-section">
+  <div class="container">
+    <div class="title">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="milestones">
+      {% for milestone in milestones %}
+        <div class="milestone">
+          <div class="year">{{ milestone.year }}</div>
+          <div class="description">{{ milestone.description }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<section class="single-integration-hero-section">
+    <div class="single-integration-hero-row">
+        <div class="single-integration-hero-col">
+            <div class="content-col">
+                <div class="page-title-content">
+                    <h1>{{ post.title }}</h1>
+                </div>
+                <div class="page-title-content mobile-hide">
+                    {{ content|e('wp_kses_post') }}
+                </div>
+                <div class="single-integration-hero-form start-free-trial-form">
+                    {{ gravity_grom_shortcode|shortcodes }}
+                </div>
+                <div class="page-title-content mobile-show">
+                    {{ content|e('wp_kses_post') }}
+                </div>
+            </div>
+        </div>
+        <div class="single-integration-hero-col">
+            <div class="image-col">
+                {% if retina_image %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                        data-sizes="auto"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% else %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+<section class="search-blog-section">
+  <div class="container">
+    <div class="search-blog-header"> 
+      <div class="search-blog-form">
+        <div class="blog-search-form">
+          <form method="GET" class="site-blog-search-form" action="{{ site.url }}">
+            <input type="text" name="s" placeholder="Search blog">
+            <input type="submit" value="" >
+          </form>
+        </div>
+      </div>
+      <div class="search-blog-info">
+        <h1>{{ page_title }}</h1>
+        <p>{{ posts_count }} blog posts</p>
+      </div>
+    </div>
+    <div class="search-blog-row">
+      {% for index, post in posts %}
+        {% if index == 3 %}
+          <div class="search-blog-item blog-card mobile-hide">
+            <a href="{{ banner_ad.link_url }}"><div class="inner inner-image" style="background-image: url('{{ banner_ad.image.src }}');"></div></a>
+          </div>
+        {% endif %}
+        <div class="search-blog-item blog-card">
+          <a href="{{ post.link }}">
+            <div class="inner">
+              <div class="blog-image" style="background-image: url('{{ post.thumbnail.src('blog_400_200') }}');"></div>
+              <div class="blog-info">
+                <div class="blog-category {{ post.category.slug }}">{{ post.category }}</div>
+                <h3>{{ post.post_title }}</h3>
+                <p>{{ post.post_excerpt|slice(0, 85) }}...</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% else %}
+        <div class="all-blog-item">No Blogs have been found.</div>
+      {% endfor %}
+    </div>
+    <div class="search-blog-navigation">{{ page_nav_html }}</div>
+  </div>
+</section>

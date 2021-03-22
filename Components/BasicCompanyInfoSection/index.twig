@@ -1,0 +1,37 @@
+<section class="basic-company-info-section">
+    <div class="container">
+        <h2>{{ section_title|e('wp_kses_post') }}</h2>
+        <div class="basic-company-info-row">
+            <div class="basic-company-info-col">
+                <div class="basic-company-info-inner">
+                    <div class="icon">
+                        <div class="icon-inner">
+                            <img src="{{ founded_in_icon }}" alt="founded_in_icon">
+                        </div>
+                    </div>
+                    <div class="info">{{ founded_in|e('wp_kses_post') }}</div>
+                </div>
+            </div>
+            <div class="basic-company-info-col">
+                <div class="basic-company-info-inner">
+                    <div class="icon">
+                        <div class="icon-inner">
+                            <img src="{{ location_icon }}" alt="location_icon">
+                        </div>
+                    </div>
+                    <div class="info">{{ location|e('wp_kses_post') }}</div>
+                </div>
+            </div>
+            <div class="basic-company-info-col">
+                <div class="basic-company-info-inner">
+                    <div class="icon">
+                        <div class="icon-inner">
+                            <img src="{{ contact_email_icon }}" alt="contact_email_icon">
+                        </div>
+                    </div>
+                    <div class="info">{{ contact_email|e('wp_kses_post') }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,146 @@
+.single-integration-hero-section {
+  padding: 93px 0 70PX;
+}
+
+.single-integration-hero-row {
+  @include clearfix();
+}
+
+.single-integration-hero-col {
+  float: left;
+  width: 50%;
+
+  .content-col {
+    float: right;
+    max-width: $container-width / 2;
+    padding-top: 70px;
+  }
+
+  .page-title-content {
+    padding-top: 0;
+    text-align: left;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    ul {
+      margin-top: 17px;
+    }
+
+    li {
+      color: $slate-grey;
+      font-size: 18px;
+      line-height: 1.4;
+      padding-left: 30px;
+      position: relative;
+
+      &::before {
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9Ii0yOTUuNCAzOTAuNiAxNyAxMy4zIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IC0yOTUuNCAzOTAuNiAxNyAxMy4zOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiM0NEMwNzMiIHN0cm9rZS13aWR0aD0iNC4wMjgiIGQ9Ik0tMjk0LDM5Nmw1LDUuMWw5LjEtOS4xIi8+DQo8L3N2Zz4NCg==');
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        height: 14px;
+        left: 0;
+        position: absolute;
+        top: 6px;
+        width: 18px;
+      }
+    }
+
+    li+li {
+      margin-top: 8px;
+    }
+  }
+
+  .image-col {
+    overflow: hidden;
+    padding-left: 80px;
+
+    img {
+      max-width: none;
+    }
+  }
+}
+
+.single-integration-hero-form {
+  margin: 37px 0 0;
+  max-width: 430px;
+}
+
+
+@media (max-width : 1210px) {
+  .single-integration-hero-col {
+    .content-col {
+      max-width: none;
+      padding-left: 48px;
+    }
+  }
+}
+
+@media (max-width : 1000px) {
+  .single-integration-hero-section {
+    padding: 63px 20px 58px;
+  }
+
+  .single-integration-hero-col {
+    float: none;
+    width: 100%;
+
+    .content-col {
+      float: none;
+      padding-left: 0;
+      padding-top: 0;
+    }
+
+    .page-title-content {
+      text-align: center;
+
+      h1 {
+        font-size: 30px;
+      }
+
+      p {
+        max-width: 100%;
+      }
+
+      ul {
+        margin-top: 45px;
+        text-align: left;
+      }
+
+      li {
+        font-size: 15px;
+
+        &::before {
+          height: 13px;
+          width: 16px;
+        }
+      }
+
+      li+li {
+        margin-top: 13px;
+      }
+    }
+
+    .image-col {
+      margin-right: -20px;
+      margin-top: 64px;
+      padding-left: 0;
+      text-align: center;
+
+      img {
+        width: 400px;
+      }
+    }
+  }
+
+  .single-integration-hero-form {
+    margin: 18px auto 0;
+  }
+}

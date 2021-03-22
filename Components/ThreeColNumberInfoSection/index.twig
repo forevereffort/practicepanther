@@ -1,0 +1,24 @@
+<section class="three-col-number-info-section">
+    <div class="container">
+        <div class="three-col-number-info-row">
+            <div class="three-col-number-info-col">
+                <div class="three-col-number-info-inner {% if col_1_br_hide %} mobile-br-hide {% endif %}">
+                    <h2>{{ col_1_title }}</h2>
+                    <p>{{ col_1_info|e('wp_kses_post') }}</p>
+                </div>
+            </div>
+            <div class="three-col-number-info-col">
+                <div class="three-col-number-info-inner {% if col_2_br_hide %} mobile-br-hide {% endif %}">
+                    <h2>{{ col_2_title }}</h2>
+                    <p>{{ col_2_info|e('wp_kses_post') }}</p>
+                </div>
+            </div>
+            <div class="three-col-number-info-col">
+                <div class="three-col-number-info-inner {% if col_3_br_hide %} mobile-br-hide {% endif %}">
+                    <h2>{{ col_3_title }}</h2>
+                    <p>{{ col_3_info|e('wp_kses_post') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

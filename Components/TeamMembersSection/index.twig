@@ -1,0 +1,36 @@
+<section class="team-members-section">
+    <div class="container">
+        <div class="heading">
+            {% if title %}
+                <h2>{{ title }}</h2>
+            {% endif %}
+        </div>
+        <div class="team-member-grid">
+            {% for item in team %}
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(0, 231) }}"
+                            data-src="{{ item.team_member.meta('team_member_image').src|resizeDynamic(0, 231) }}"
+                            alt="{{ item.team_member.meta('team_member_image').alt|e }}"
+                        >
+                    </div>
+                    <div class="team-member-text">
+                        <div class="team-member-position">
+                            {{ item.team_member.position }}
+                        </div>
+                        <div class="team-member-name">
+                            {{ item.team_member.name }}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                No team members have been found.
+            {% endfor %}
+        </div>
+        <div class="load-more">
+            <a class="global-link" href="#">Load more</a>
+        </div>
+    </div>
+</section>

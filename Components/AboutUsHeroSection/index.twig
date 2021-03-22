@@ -1,0 +1,9 @@
+<section class="about-us-hero-section">
+    <div class="about-us-hero-section-background mobile-hide" style="background-image: url('{{ desktop_background_image.src|resizeDynamic(desktop_background_image.width) }}');"></div>
+    <div class="about-us-hero-section-background mobile-show" style="background-image: url('{{ mobile_background_image.src|resizeDynamic(mobile_background_image.width) }}');"></div>
+    <div class="container">
+        <div class="content-col">
+            {{ content|e('wp_kses_post') }}
+        </div>
+    </div>
+</section>

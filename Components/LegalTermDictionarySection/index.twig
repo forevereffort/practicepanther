@@ -1,0 +1,58 @@
+<section class="legal-term-dictionary-cat-fixed-section hide">
+    <div class="container">
+        <div class="legal-term-dictionary-cat-row">
+            {% for letter in 'a'..'z' %}
+                <div class="legal-term-dictionary-cat-item" data-id="{{ letter }}">{{ letter }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="legal-term-dictionary-cat-section">
+    <div class="container">
+        <div class="legal-term-dictionary-cat-row">
+            {% for letter in 'a'..'z' %}
+                <div class="legal-term-dictionary-cat-item" data-id="{{ letter }}">{{ letter }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="legal-term-dictionary-mobile-cat-fixed-section hide">
+    <div class="container">
+        <div class="legal-term-dictionary-mobile-cat-elem">
+            <div class="legal-term-dictionary-mobile-cat-title">SELECT LETTER</div>
+            <div class="legal-term-dictionary-mobile-cat-list" style="display: none;">
+                {% for letter in 'a'..'z' %}
+                    <div class="legal-term-dictionary-cat-item" data-id="{{ letter }}">{{ letter }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="legal-term-dictionary-mobile-cat-section">
+    <div class="container">
+        <div class="legal-term-dictionary-mobile-cat-elem">
+            <div class="legal-term-dictionary-mobile-cat-title">SELECT LETTER</div>
+            <div class="legal-term-dictionary-mobile-cat-list" style="display: none;">
+                {% for letter in 'a'..'z' %}
+                    <div class="legal-term-dictionary-cat-item" data-id="{{ letter }}">{{ letter }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="legal-term-dictionary-list-section">
+    <div class="container">
+        {% if sorted_legal_terms_list %}
+            {% for cat, cat_list in sorted_legal_terms_list %}
+                <div id="legal-term-dictionary-{{ cat }}" class="legal-term-dictionary-list-cat">{{ cat }}</div>
+                {% if cat_list %}
+                    <div class="legal-term-dictionary-list-row">
+                        {% for item in cat_list %}
+                            <div class="legal-term-dictionary-list-col"><a href="{{ item.link }}">{{ item.post_title|e('wp_kses_post') }}</a></div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>

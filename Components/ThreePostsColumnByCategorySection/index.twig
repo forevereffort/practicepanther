@@ -1,0 +1,35 @@
+<section class="three-posts-column-by-category-section">
+    <div class="container">
+        <div class="three-posts-column-by-category-header">
+            <div class="three-posts-column-by-category-header-left">
+                <h2>{{ title }}</h2>
+            </div>
+            <div class="three-posts-column-by-category-header-right mobile-hide">
+                <div class="three-posts-column-by-category-link">
+                    <a class="global-link" href="{{ link_url }}">{{ desktop_link_title }}</a>
+                </div>
+            </div>
+        </div>
+        <div class="three-posts-column-by-category-row">
+            {% for blog in blogs %}
+                <div class="three-posts-column-by-category-item blog-card displayed-post" data-post-id="{{ blog.id }}">
+                    <a href="{{ blog.link }}">
+                        <div class="inner">
+                            <div class="blog-image" style="background-image: url('{{ blog.thumbnail.src|resizeDynamic(400, 200) }}');"></div>
+                            <div class="blog-info">
+                                <div class="blog-category {{ blog.category.slug }}">{{ blog.category }}</div>
+                                <h3>{{ blog.post_title }}</h3>
+                                <p>{{ blog.post_excerpt|slice(0, 85) }}...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% else %}
+                No Blogs have been found.
+            {% endfor %}
+        </div>
+        <div class="three-posts-column-by-category-link mobile-show">
+            <a class="global-link" href="{{ link_url }}">{{ mobile_link_title }}</a>
+        </div>
+    </div>
+</section>

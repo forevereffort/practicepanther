@@ -1,0 +1,108 @@
+<header>
+  <div class="container">
+    <div class="header-logo">
+      <a href="{{ site.link }}"><img src="{{ logo.src }}" alt="{{ logo.alt }}"></a>
+      <div class="header-mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <ul class="header-menu">
+        {% for item in menu.items %}
+          <li class="menu-item {{ item.classes | join(' ') }}">
+            {% if item.header_menu_description %}
+              <span>{{ item.header_menu_description }}</span>
+            {% endif %}
+            <a class="menu-link" href="{{ item.link }}">{{ item.title }}
+              {% if item.children %}
+                <i class="menu-arrow"></i>
+              {% endif %}
+            </a>
+            {% if item.children %}
+              {# Check if sub-menu will have 2 columns #}
+              {% if item.children|length <= 4 %}
+                <ul class="sub-menu single-column">
+              {% else %}
+                <ul class="sub-menu">
+              {% endif %}
+                  {# Check for number of items in first column #}
+                  {% set column_height = ((item.children|length) / 2)|round %}
+
+                  {% if item.children|length > 4 %}
+                    <div class="sub-menu-column">
+                      {% set i = 0 %}
+                      {% set break = false %}
+                      {% for child in item.children if not break %}
+                        <li>
+                          <a class="sub-menu-item" href="{{ child.link }}">
+                            {% if child.icon %}
+                              <div class="icon">
+                                <div class="img" style="background-image: url({{ Image(child.icon).src }})"></div>
+                              </div>
+                            {% endif %}
+                            <div class="content">
+                              <p class="title">{{ child.title }}</p>
+                              <p class="description">{{ child.header_menu_description }}</p>
+                            </div>
+                          </a>
+                        </li>
+                        {% set i = i + 1 %}
+                        {% if i >= column_height %}
+                          {% set break = true %}
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                    <div class="sub-menu-column">
+                      {% set j = 0 %}
+                      {% set continue = false %}
+                      {% for child in item.children %}
+                        {% if j < column_height %}
+                          {% set continue = true %}
+                        {% else %}
+                          {% set continue = false %}
+                        {% endif %}
+                        {% if not continue %}
+                          <li>
+                            <a class="sub-menu-item" href="{{ child.link }}">
+                              {% if child.icon %}
+                                <div class="icon">
+                                  <div class="img" style="background-image: url({{ Image(child.icon).src }})"></div>
+                                </div>
+                              {% endif %}
+                              <div class="content">
+                                <p class="title">{{ child.title }}</p>
+                                <p class="description">{{ child.header_menu_description }}</p>
+                              </div>
+                            </a>
+                          </li>
+                        {% endif %}
+                        {% set j = j + 1 %}
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {% for child in item.children %}
+                        <li>
+                          <a class="sub-menu-item" href="{{ child.link }}">
+                            {% if child.icon %}
+                              <div class="icon">
+                                <div class="img" style="background-image: url({{ Image(child.icon).src }})"></div>
+                              </div>
+                            {% endif %}
+                            <div class="content">
+                              <p class="title">{{ child.title }}</p>
+                              <p class="description">{{ child.header_menu_description }}</p>
+                            </div>
+                          </a>
+                        </li>
+                    {% endfor %}
+                  {% endif %}
+                </ul>
+              {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

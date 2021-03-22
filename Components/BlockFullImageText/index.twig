@@ -1,0 +1,65 @@
+<section class="block-full-image-text-section {% if is_gray_background %} gray {% endif %}">
+    <div class="block-full-image-text-row">
+        <div class="block-full-image-text-col mobile-hide">
+            <div class="image-col">
+                {% if retina_image %}
+                    <img
+                        class="lazyload"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                        data-sizes="auto"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% else %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% endif %}
+            </div>
+        </div>
+        <div class="block-full-image-text-col">
+            <div class="content-col">
+                {% if not mobile_title_below_image %}
+                    <div class="title-info">
+                        {{ title|e('wp_kses_post') }}
+                    </div>
+                {% endif %}
+                <div class="mobile-image-col">
+                    {% if retina_image %}
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(image.width, image.height) }}"
+                            data-src="{{ image.src|resizeDynamic(image.width) }}"
+                            data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                            data-sizes="auto"
+                            alt="{{ image.alt|e }}"
+                        >
+                    {% else %}
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(image.width, image.height) }}"
+                            data-src="{{ image.src|resizeDynamic(image.width) }}"
+                            alt="{{ image.alt|e }}"
+                        >
+                    {% endif %}
+                </div>
+                {% if mobile_title_below_image %}
+                    <div class="title-info title">
+                        {{ title|e('wp_kses_post') }}
+                    </div>
+                {% endif %}
+                    <div class="{{ mobile_title_below_image ? 'detail-info title-below-image' : 'detail-info'}}">
+                        {{ content|e('wp_kses_post') }}
+                    </div>
+                {% if link_title %}
+                    <div class="block-link">
+                        <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

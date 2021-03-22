@@ -1,0 +1,200 @@
+.question-answer-section {
+  background-color: $pale-grey;
+  padding: 117px 0 147px;
+}
+
+.question-answer-section-title {
+  text-align: center;
+
+  h2 {
+    font-size: 30px;
+  }
+}
+
+.question-answer-wrapper {
+  @include clearfix();
+  margin-top: 96px;
+  position: relative;
+}
+
+.question-answer-tabs {
+  float: left;
+  padding-right: 100px;
+  width: 32.40741%;
+}
+
+.question-answer-tab {
+  @include remove-phone-tab-high-light();
+  border-radius: 9px;
+  color: $black;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  letter-spacing: 1.39px;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  transition: box-shadow 0.3s;
+    
+  &.active {
+    background-color: $white;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.15);
+  }
+    
+  &:hover {
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.15);        
+  }
+}
+
+.question-answer-tab + .question-answer-tab {
+  margin-top: 10px;
+}
+
+.question-answer-lists {
+  float: left;
+  width: 67.59259%;
+}
+
+.question-answer-list {
+  border-top: 1px solid #cbcbcb;
+}
+
+.question-answer-list:last-child {
+  border-bottom: 1px solid #cbcbcb;
+}
+
+.question-answer-title {
+  padding: 23px 0;
+
+  h3 {
+    @include remove-phone-tab-high-light();
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+
+    &::after {
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iLTI5NiAzOTAuOCAxOC4zIDExLjMiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzI1MjUyNSIgc3Ryb2tlLXdpZHRoPSIyLjIyMiIgZD0iTS0yOTUuMiwzOTEuNmw4LjQsOC45bDguNC04LjkiLz48L3N2Zz4=');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      height: 11px;
+      position: absolute;
+      right: 0;
+      top: 6px;
+      transition: transform 0.5s;
+      width: 18px;
+    }
+  }
+
+  .open::after {
+    transform: rotate(180deg);
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+  }
+}
+
+.question-answer-content {
+  padding: 0 250px 28px 0;
+
+  p {
+    font-size: 16px;
+  }
+}
+
+.question-answer-combobox-list {
+  background-color: $white;
+  border-radius: 9px;
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.15);
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.question-answer-combobox-label {
+  position: relative;
+
+  &::after {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iLTI5NiAzOTAuOCAxOC4zIDExLjMiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzI1MjUyNSIgc3Ryb2tlLXdpZHRoPSIyLjIyMiIgZD0iTS0yOTUuMiwzOTEuNmw4LjQsOC45bDguNC04LjkiLz48L3N2Zz4=');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    height: 11px;
+    position: absolute;
+    right: 19px;
+    top: 23px;
+    transition: transform 0.5s;
+    width: 18px;
+  }
+
+  &.open::after {
+    transform: rotate(180deg);
+  }
+}
+
+.question-answer-combobox-wrapper {
+  border-top: 1px solid #d9d9d9;
+}
+
+.question-answer-combobox {
+  @include remove-phone-tab-high-light();
+  color: $black;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  letter-spacing: 1.39px;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.question-answer-combobox+.question-answer-combobox {
+  border-top: 1px solid #d9d9d9;
+}
+
+@media (max-width : 1000px) {
+  .question-answer-section {
+    padding: 63px 0 70px;
+  }
+
+  .question-answer-wrapper {
+    margin-top: 49px;
+    padding-top: 97px;
+  }
+
+  .question-answer-tabs {
+    display: none;
+  }
+
+  .question-answer-lists {
+    float: none;
+    width: 100%;
+  }
+
+  .question-answer-title {
+    padding: 18px 0;
+    
+    h3 {
+      font-size: 16px;
+      line-height: 1.4;
+      padding-right: 60px;
+    }
+  }
+
+  .question-answer-combobox-list {
+    display: block;
+  }
+
+  .question-answer-content {
+    padding: 0 0 24px;
+
+    p {
+      font-size: 15px;
+    }
+  }
+}

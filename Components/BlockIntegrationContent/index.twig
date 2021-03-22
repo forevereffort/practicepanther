@@ -1,0 +1,24 @@
+{# Used OurPlansSection Component #}
+<section class="our-plans-section gray">
+    <div class="container">
+        <h2>Explore Related Integrations</h2>
+        <div class="our-plans-row">
+            {% for integration in related_integrations %}
+                <div class="our-plan-item">
+                    <a class="our-plan-inner related-integration-wrapper" href="{{ integration.link }}">
+                        <div class="related-integration-inner">
+                            <div class="our-plan-icon related-integration-icon">
+                                <img src="{{ integration.meta('icon_image').src }}" alt="{{ integration.meta('icon_image').alt }}">
+                            </div>
+                            <div class="our-plan-title">{{ integration.title|e }}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="our-plans-link mobile-hide">
+            <a class="global-link" href="{{ see_all_integrations_link_url }}">See all Integrations</a>
+        </div>
+    </div>
+</section>
+{{ renderComponent('HomeStartTrialSection', {'content': integration_footer_form_content, 'gravity_grom_shortcode': integration_footer_gravity_grom_shortcode}) }}

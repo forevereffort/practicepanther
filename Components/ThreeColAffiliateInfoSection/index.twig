@@ -1,0 +1,30 @@
+<section class="three-col-affiliate-info-section">
+    <div class="container">
+        <div class="three-col-affiliate-info-title">
+            <h2>{{ title|e('wp_kses_post') }}</h2>
+        </div>
+        <div class="three-col-affiliate-info-row">
+            <div class="three-col-affiliate-info-col">
+                <div class="three-col-affiliate-info-inner">
+                    <div class="three-col-affiliate-info-icon" style="background-image: url('{{ icon_1 }}');"></div>
+                    <div class="three-col-affiliate-info-content">{{ content_1|e('wp_kses_post') }}</div>
+                </div>
+            </div>
+            <div class="three-col-affiliate-info-col">
+                <div class="three-col-affiliate-info-inner">
+                    <div class="three-col-affiliate-info-icon" style="background-image: url('{{ icon_2 }}');"></div>
+                    <div class="three-col-affiliate-info-content">{{ content_2|e('wp_kses_post') }}</div>
+                </div>
+            </div>
+            <div class="three-col-affiliate-info-col">
+                <div class="three-col-affiliate-info-inner">
+                    <div class="three-col-affiliate-info-icon" style="background-image: url('{{ icon_3 }}');"></div>
+                    <div class="three-col-affiliate-info-content">{{ content_3|e('wp_kses_post') }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="three-col-affiliate-info-link">
+            <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<section class="single-legal-term-content-section">
+    <div class="container">
+        <div class="single-legal-term-content">
+            <h1>{{ post.post_title|e('wp_kses_post') }}</h1>
+            {{ post.content|e('wp_kses_post') }}
+        </div>
+        <div class="single-legal-term-next-title">
+            <h2>Next legal terms</h2>
+        </div>
+        {% if next_legal_terms %}
+            <div class="single-legal-term-next-row">
+                {% for item in next_legal_terms %}
+                    <div class="single-legal-term-next-col"><a href="{{ item.link }}">{{ item.post_title|e('wp_kses_post') }}</a></div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>

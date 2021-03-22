@@ -1,0 +1,13 @@
+<section class="faq-section">
+  <div class="faq-container {% if is_small_width %} small-width {% endif %}">
+    <h2>{{ section_title }}</h2>
+    {% for faq in faqs %}
+      <div class="faq-item">
+        <div class="faq-title">
+          <h3>{{ faq.question|e }}</h3>
+        </div>
+        <div class="faq-content" style="display: none;">{{ faq.answer|e('wp_kses_post') }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

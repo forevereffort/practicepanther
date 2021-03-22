@@ -1,0 +1,17 @@
+<div class="home-featured-logo-list home-featured-logo-desktop">
+    <div class="home-featured-logo home-featured-logo-title">{{ section_title|e('wp_kses_post') }}</div>
+    {% for logo in logo_setting.desktop.logos %}
+        <div class="home-featured-logo">
+            <img class="lazyload" data-src="{{ logo.image|resizeDynamic(logo.image.width) }}" alt="{{ logo.image.alt|e }}" style="max-width: {{ logo.width }}px">
+        </div> 
+    {% endfor %}
+</div>
+<div class="home-featured-logo-list home-featured-logo-mobile">
+    <div class="home-featured-logo home-featured-logo-title">{{ section_title|e('wp_kses_post') }}</div>
+    {% for logo in logo_setting.mobile.logos %}
+        {% if logo.line_break %}<div class="home-featured-logo-mobile-line-break"></div>{% endif %}
+        <div class="home-featured-logo">
+            <img class="lazyload" data-src="{{ logo.image|resizeDynamic(logo.image.width) }}" alt="{{ logo.image.alt|e }}" style="max-width: {{ logo.width }}px">
+        </div> 
+    {% endfor %}
+</div>

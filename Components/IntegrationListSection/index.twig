@@ -1,0 +1,40 @@
+{% if results|length > 0 %}
+    <section class="integration-list-section">
+        <div class="container">
+            {% for res in results %}
+                <div class="integration-category-section">
+                    <h2>{{ res.cat_name }}</h2>
+                    <div class="integration-category-row">
+                        {% for integration in res.integrations %}
+                            <div class="integration-category-item">
+                                <a href="{{ integration.link }}">
+                                    <div class="integration-category-item-inner">
+                                        <div class="integration-category-item-image">
+                                            <img src="{{ integration.meta('icon_image').src }}" alt="{{ integration.meta('icon_image').alt }}">
+                                        </div>
+                                        <div class="integration-category-item-info">
+                                            <h3>{{ integration.title }}</h3>
+                                            {% if is_mobile %}
+                                                <p>{{ integration.meta('integration_excerpt')|slice(0, 85) }}...</p>
+                                            {% else %}
+                                                <p>{{ integration.meta('integration_excerpt')|slice(0, 110) }}...</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% if res.total_pages > 1 %}
+                        <div class="integration-category-link">
+                            <a class="global-link" href="#" data-cat-id="{{ res.cat_id }}" data-current-page="1" data-posts-per-page="{{ posts_per_page }}" data-total-pages="{{ res.total_pages }}" data-nonce="{{ nonce }}">Load More {{ res.cat_name }}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <div class="integration-list-load-spinner hide"></div>
+{% else %}
+    Nothing to selected a integration category
+{% endif %}

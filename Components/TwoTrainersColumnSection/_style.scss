@@ -1,0 +1,149 @@
+.two-trainers-column-section {
+  padding: 112px 0 124px;
+}
+
+.two-trainers-title {
+  text-align: center;
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+    margin-top: 9px;
+  }
+}
+
+.two-trainers-column-row {
+  display: flex;
+  margin: 75px -20px 0;
+}
+
+.two-trainers-column {
+  padding: 0 20px;
+  width: 50%;
+
+  .inner {
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.17);
+    height: 100%;
+  }
+}
+
+.two-trainers-image {
+  background-color: $pale-grey;
+  border-radius: 8px 8px 0 0;
+  height: 192px;
+  position: relative;
+}
+
+.two-trainers-image-inner {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.two-trainers-info {
+  padding: 43px 60px 45px;
+
+  h3 {
+    color: $blue;
+    font-size: 11px;
+    font-weight: $font-weight-medium;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-top: 14px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .two-trainers-link {
+    margin-top: 30px;
+  }
+
+  a {
+    background-color: $green;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px -11px rgba(0, 0, 0, 0.26);
+    color: $white;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 1.52px;
+    padding: 11px 25px;
+  }
+}
+
+@media (max-width : 1000px) {
+  .two-trainers-column-section {
+    padding: 63px 0 70px;
+  }
+
+  .two-trainers-title {    
+    h2 {
+      font-size: 30px;
+    }
+    
+    p {
+      font-size: 15px;
+      margin-top: 8px;
+    }
+  }
+
+  .two-trainers-column-row {
+    display: block;
+    margin: 48px 0 0;
+  }
+
+  .two-trainers-column {
+    padding: 0;
+    width: 100%;
+  }
+
+  .two-trainers-column+.two-trainers-column {
+    margin-top: 50px;
+  }
+
+  .two-trainers-image {
+    height: 147px;
+
+    img {
+      height: 156px;
+    }
+  }
+
+  .two-trainers-info {
+    padding: 40px 30px;
+    
+    h2 {
+      font-size: 26px;
+    }
+    
+    .two-trainers-link {
+      text-align: center;
+    }
+    
+    a {
+      border-radius: 23px;
+      box-shadow: 0 9px 22px -12px rgba(0, 0, 0, 0.26);
+      font-size: 13px;
+      letter-spacing: 1.65px;
+      padding: 12px 26px 13px;
+    }
+  }
+}

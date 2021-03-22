@@ -1,0 +1,48 @@
+<section class="question-answer-section">
+    <div class="container">
+        <div class="question-answer-section-title">
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="question-answer-wrapper">
+            <div class="question-answer-combobox-list">
+                <div class="question-answer-combobox question-answer-combobox-label">{{ category_list[0].category_name }}</div>
+                <div class="question-answer-combobox-wrapper" style="display: none;">
+                    {% set index = 0 %}
+                    {% for category in category_list %}
+                        {% set index = index + 1 %}
+                        <div class="question-answer-combobox" data-index="{{ index }}">
+                            {{ category.category_name }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="question-answer-tabs">
+                {% set index = 0 %}
+                {% for category in category_list %}
+                    {% set index = index + 1 %}
+                    <div class="question-answer-tab {% if index == 1 %} active {% endif %}" data-index="{{ index }}">
+                        {{ category.category_name }}
+                    </div>
+                {% endfor %}
+            </div>
+            {% set index = 0 %}
+            {% for category in category_list %}
+                {% set index = index + 1 %}
+                {% if category.acf_fc_layout == 'question_answer' %}
+                    <div class="question-answer-lists-{{ index }} question-answer-lists {% if index > 1 %} hide {% endif %}">
+                        {% for row in category.rows %}
+                            <div class="question-answer-list">
+                                <div class="question-answer-title">
+                                    <h3>{{ row.question }}</h3>
+                                </div>
+                                <div class="question-answer-content" style="display: none;">
+                                    {{ row.answer }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

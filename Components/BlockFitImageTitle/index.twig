@@ -1,0 +1,35 @@
+<section class="block-fit-image-title-section {% if is_gray_background %} gray {% endif %} {% if reduce_top_space %} reduce-top-space {% endif %} {% if reduce_bottom_space %} reduce-bottom-space {% endif %}">
+    <div class="container">
+        <div class="block-fit-image-title-row {% if place_image_right %} image-right {% else %} image-left {% endif %}">
+            <div class="image-col {% if image_align_edge %} image-align-edge {% endif %}">
+                {% if retina_image %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                        data-sizes="auto"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% else %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% endif %}
+            </div>
+            <div class="content-col">
+                <div class="title-info">
+                    {{ title|e('wp_kses_post') }}
+                </div>
+                {% if link_title %}
+                    <div class="block-link">
+                        <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

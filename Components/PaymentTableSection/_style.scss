@@ -1,0 +1,141 @@
+.payment-table-section {
+  padding: 116px 0 124px;
+
+  .gray-bkg {
+    background-color: #f7f7f7;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.payment-table-title {
+  text-align: center;
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+    margin-top: 14px;
+  }
+}
+
+.payment-table-wrapper {
+  margin-top: 95px;
+
+  .price-header-row {
+    .price-val {
+      span {
+        color: $black;
+        font-size: 16px;
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+
+  .price-val {
+    width: 340px;
+
+    .close-icon {
+      display: inline-block;
+      height: 10px;
+      position: relative;
+      width: 11px;
+
+      &::before,
+      &::after {
+        background-color: $slate-grey;
+        content: '';
+        height: 1px;
+        left: -2px;
+        position: absolute;
+        top: 5px;
+        width: 14px;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .checked-icon-2 {
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMjk2LjMgMzkwLjggMTQuNiAxMS44IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IC0yOTYuMyAzOTAuOCAxNC42IDExLjg7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiM0NEMwNzMiIHN0cm9rZS13aWR0aD0iMy41NTYiIGQ9Ik0tMjk1LDM5NS41bDQuMyw0LjVsNy43LTgiLz48L3N2Zz4=');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      height: 10px;
+      width: 13px;
+    }
+  }
+
+  .panther-payments {
+    img {
+      width: 137px;
+    }
+  }
+}
+
+.price-title {
+  .info-icon-2 {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSItMjk4LjggMzkwLjkgMTIuNCAxMi40Ij48cGF0aCBmaWxsPSIjZDhkOGQ4IiBkPSJNLTI5MC45LDQwMC4xYzAsMC4xLTAuMSwwLjItMC4xLDAuMmMtMC40LDAuNC0wLjgsMC42LTEuMywwLjZjLTAuMiwwLTAuNSwwLTAuNywwYy0wLjQtMC4xLTAuOS0wLjYtMC44LTEuMSBjMC4xLTAuNCwwLjEtMC43LDAuMi0xLjFjMC4xLTAuNiwwLjItMS4zLDAuMy0xLjljMCwwLDAtMC4xLDAtMC4xYzAtMC4zLTAuMS0wLjQtMC4zLTAuNGMtMC4xLDAtMC4yLDAtMC4zLTAuMSBjLTAuMSwwLTAuMi0wLjEtMC4yLTAuM2MwLTAuMSwwLjEtMC4yLDAuMi0wLjJjMC4xLDAsMC4yLDAsMC4yLDBoMS45YzAuMiwwLDAuNCwwLjEsMC40LDAuNGMwLDAuMiwwLDAuNC0wLjEsMC42IGMtMC4xLDAuNy0wLjMsMS40LTAuNCwyLjJjMCwwLjItMC4xLDAuNS0wLjEsMC43YzAsMC4xLDAsMC4yLDAsMC40YzAsMC4xLDAuMSwwLjIsMC4zLDAuMmMwLjEsMCwwLjMtMC4xLDAuNC0wLjEgYzAuMSwwLDAuMi0wLjEsMC4zLTAuMUMtMjkxLDM5OS44LTI5MC44LDM5OS45LTI5MC45LDQwMC4xIE0tMjkyLjMsMzkzLjNjMC42LDAsMSwwLjUsMSwxYzAsMC42LTAuNSwxLTEsMWMtMC42LDAtMS0wLjUtMS0xIEMtMjkzLjMsMzkzLjctMjkyLjksMzkzLjMtMjkyLjMsMzkzLjMgTS0yOTIuNiwzOTAuOWMtMy40LDAtNi4yLDIuOC02LjIsNi4yYzAsMy40LDIuOCw2LjIsNi4yLDYuMmMzLjQsMCw2LjItMi44LDYuMi02LjIgQy0yODYuNCwzOTMuNy0yODkuMSwzOTAuOS0yOTIuNiwzOTAuOSIvPjwvc3ZnPg==');
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 12px;
+    left: 0;
+    position: absolute;
+    top: 4px;
+    transition: background 0.2s;
+    width: 12px;
+  }
+}
+
+@media (max-width : 1000px) {
+  .payment-table-section {
+    padding: 63px 0 70px;
+  }
+
+  .payment-table-title {
+    h2 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 15px;
+      margin-top: 9px;
+    }
+  }
+
+  .payment-table-wrapper {
+    margin-top: 48px;
+
+    .price-header-row {
+      .price-val {
+        span {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .panther-payments {
+      padding: 0 10px;
+    }
+
+    .price-val {
+      width: 100px;
+
+      p {
+        line-height: 1.5;
+        padding: 0 10px;
+      }
+    }
+  }
+}

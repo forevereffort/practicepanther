@@ -1,0 +1,19 @@
+<section class="about-us-awards-logo-section">
+  <div class="about-us-awards-logo-list about-us-awards-logo-desktop">
+    <div class="about-us-awards-logo about-us-awards-logo-title">{{ section_title|e('wp_kses_post') }}</div>
+    {% for logo in logo_setting.desktop.logos %}
+      <div class="about-us-awards-logo">
+        <img class="lazyload" data-src="{{ logo.image|resizeDynamic(logo.image.width) }}" alt="{{ logo.image.alt|e }}" style="max-width: {{ logo.width }}px">
+      </div> 
+    {% endfor %}
+  </div>
+  <div class="about-us-awards-logo-list about-us-awards-logo-mobile">
+    <div class="about-us-awards-logo about-us-awards-logo-title">{{ section_title|e('wp_kses_post') }}</div>
+    {% for logo in logo_setting.mobile.logos %}
+      {% if logo.line_break %}<div class="about-us-awards-logo-mobile-line-break"></div>{% endif %}
+      <div class="about-us-awards-logo">
+        <img class="lazyload" data-src="{{ logo.image|resizeDynamic(logo.image.width) }}" alt="{{ logo.image.alt|e }}"  style="max-width: {{ logo.width }}px">
+      </div> 
+    {% endfor %}
+  </div>
+</section>

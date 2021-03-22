@@ -1,0 +1,38 @@
+<section class="three-videos-column-section">
+    <div class="container">
+        <div class="three-videos-column-title">
+            {{ title|e('wp_kses_post') }}
+        </div>
+        <div class="three-videos-column-row">
+            {% for video in videos %}
+                <div class="three-videos-column">
+                    <div class="inner">
+                        <div class="three-videos-column-image" style="background-image: url('{{ video.meta('video_overlay_image').src|resizeDynamic(video.meta('video_overlay_image').width) }}')">
+                            <div class="three-videos-column-image-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="91" height="64" viewBox="0 0 91 64"><path d="M45.969 0C49.864.01 74.47.155 81.015 1.953c3.894 1.053 6.964 4.135 8.012 8.045 1.9 6.969 1.875 21.314 1.873 22.001l-.001.255c-.01 1.897-.136 15.103-1.871 21.722-1.049 3.91-4.119 6.992-8.013 8.044-6.757 1.786-32.774 1.876-35.359 1.88h-.413c-2.579-.005-28.532-.097-35.36-1.954C5.988 60.893 2.919 57.81 1.87 53.9.158 47.438.012 34.434 0 32.261v-.621c.012-2.163.158-15.11 1.87-21.642 1.048-3.91 4.193-7.068 8.012-8.12C16.426.15 41.032.012 44.927 0z"/></svg>
+                            </div>
+                        </div>
+                        <div class="three-videos-column-info">
+                            <h3>{% for index, term in video.terms({query:{taxonomy:'video-category', orderby:'name', order: 'ASC'}}) %}{% if index > 0 %}, {% endif %}{{ term.name }}{% endfor %}</h3>
+                            <h2>{{ video.post_title }}</h2>
+                        </div>
+                    </div>
+                    <div class="three-videos-column-dialog" style="display: none;">
+                        <div class="three-videos-column-dialog-inner">   
+                            <div class="three-videos-column-dialog-close-btn"></div>
+                            <div class="video-responsive">
+                                <video width="100%" controls poster="{{ video.meta('video_overlay_image').src|resizeDynamic(video.meta('video_overlay_image').width) }}">
+                                    <source src="{{ video.meta('video_file').url }}">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="three-videos-column-link">
+            <a class="global-link" href="{{ link_url }}">{{ link_title|e('wp_kses_post') }}</a>
+        </div>
+    </div>
+</section>

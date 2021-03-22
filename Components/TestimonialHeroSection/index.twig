@@ -1,0 +1,23 @@
+<section class="testimonial-hero-section">
+    <div class="container">
+        <div class="testimonial-hero-row">
+            <div class="testimonial-hero-desktop-background">
+                <img src="{{ desktop_background_image.src }}" alt="background">
+            </div>
+            <div class="testimonial-hero-left"> 
+                {{ content|e('wp_kses_post') }}
+                <div class="testimonial-hero-link">
+                    <a href="{{ link_url }}" class="global-button green">{{ link_title }}</a>  
+                </div>
+            </div>
+            <div class="testimonial-hero-right">
+                <div class="testimonial-hero-mobile-background">
+                    <img src="{{ mobile_background_image.src }}" alt="background">
+                </div>
+                <div class="testimonial-hero-right-image">
+                    <img src="{{ image.src }}" alt="{{ image.alt|e }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

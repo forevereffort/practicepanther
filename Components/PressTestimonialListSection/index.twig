@@ -1,0 +1,43 @@
+<section class="press-testimonial-list-section">
+    <div class="container">
+        <h2>{{ title }}</h2>
+        <div id="press-testimonial-list-row" class="press-testimonial-list-row">
+            {% if testimonials|length > 0 %}
+                {% for testimonial in testimonials %}
+                    <div class="press-testimonial-list-item">
+                        <div class="press-testimonial-list-item-inner">
+                            <div class="press-testimonial-top-part">
+                                <div class="top-line"></div>
+                                <div class="content">
+                                    {{ testimonial.meta('content')|e('wp_kses_post') }}
+                                </div>
+                            </div>
+                            <div class="press-testimonial-bottom-part">
+                                <div class="info">
+                                    <h2>{{ testimonial.title }}</h2>
+                                    <p>{{ testimonial.meta('testimonial_date') }}</p>
+                                </div>
+                                <div class="company">
+                                    <img
+                                        class="lazyload"
+                                        data-src="{{ testimonial.meta('company_logo_retina_image').src|resizeDynamic(testimonial.meta('company_logo_retina_image').width / 2) }}"
+                                        data-srcset="{{ testimonial.meta('company_logo_retina_image').src|resizeDynamic(testimonial.meta('company_logo_retina_image').width / 2) }} 1x, {{ testimonial.meta('company_logo_retina_image').src|resizeDynamic(testimonial.meta('company_logo_retina_image').width) }} 2x"
+                                        alt="{{ testimonial.meta('company_logo_retina_image').alt|e }}"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                Nothing
+            {% endif %}
+        </div>
+        {% if total_pages > 1 %}
+            <div class="press-testimonial-list-link">
+                <a class="global-link" href="#" data-current-page="1" data-posts-per-page="{{ posts_per_page }}" data-total-pages="{{ total_pages }}" data-nonce="{{ nonce }}">Load More Press Testimonials</a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+<div class="press-testimonial-list-load-spinner hide"></div>

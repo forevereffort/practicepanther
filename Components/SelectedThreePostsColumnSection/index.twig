@@ -1,0 +1,26 @@
+<section class="selected-three-posts-column-section">
+    <div class="container">
+        <h2>{{ title }}</h2>
+        <div class="selected-three-posts-column-row">
+            {% for blog in blogs %}
+                <div class="selected-three-posts-column-item blog-card displayed-post" data-post-id="{{ blog.id }}">
+                    <a href="{{ blog.link }}">
+                        <div class="inner">
+                            <div class="blog-image" style="background-image: url('{{ blog.thumbnail.src('blog_400_200') }}');"></div>
+                            <div class="blog-info">
+                                <div class="blog-category {{ blog.category.slug }}">{{ blog.category }}</div>
+                                <h3>{{ blog.post_title }}</h3>
+                                <p>{{ blog.post_excerpt|slice(0, 85) }}...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% else %}
+                No Blogs have been found.
+            {% endfor %}
+        </div>
+        <div class="selected-three-posts-column-link">
+            <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+        </div>
+    </div>
+</section>

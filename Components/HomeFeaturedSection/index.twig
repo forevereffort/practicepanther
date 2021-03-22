@@ -1,0 +1,18 @@
+{% if only_display_logos %}
+  <section class="home-featured-logo-section">
+    {{ renderComponent('FeaturedLogoList', { 'section_title': section_title|e('wp_kses_post'), 'logo_setting' : logo_setting }) }}
+  </section>
+{% else %}
+  <section class="home-featured-section">
+    {{ renderComponent('FeaturedLogoList', { 'section_title': section_title|e('wp_kses_post'), 'logo_setting' : logo_setting }) }}
+    <div class="home-featured-video">
+      <div class="home-featured-video-inner">
+        {# <img src="{{ video_overlay_image.src }}" alt="{{ video_overlay_image.alt|e }}"> #}
+        <video width="100%" autoplay="true" playsinline="" muted="muted" loop="loop" poster="{{ video_overlay_image.src }}">
+          <source src="{{ video_file.url }}">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+{% endif %}

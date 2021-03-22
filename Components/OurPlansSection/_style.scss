@@ -1,0 +1,116 @@
+.our-plans-section {
+  padding: 114px 0 120px;
+
+  &.gray {
+    background-color: $gray-background-color;
+  }
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+
+    .page-template-page-about-us & {
+      font-size: 40px;
+    }
+  }
+}
+
+.our-plans-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px -15px 0;
+}
+
+.our-plan-item {
+  float: left;
+  margin: 10px 0;
+  padding: 0 15px;
+  width: 16.66667%;
+}
+
+.our-plan-inner {
+  background-color: $white;
+  border-radius: 9px;
+  // box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+  display: block;
+  height: 100%;
+  padding: 35px 15px 32px;
+  position: relative;
+  top: 0;
+  transition: top 0.5s;
+
+  @media (min-width : 1250px) {
+    &:hover {
+      top: -10px;
+    }
+  }
+}
+
+.our-plan-icon {
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 56px;
+  position: relative;
+}
+
+.our-plan-title {
+  color: $black;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.our-plans-link {
+  margin-top: 46px;
+  text-align: center;
+}
+
+@media (max-width : 1250px) {
+  .our-plans-section {
+    .container {
+      padding: 0 20px;
+    }
+  }
+
+  .our-plan-item {
+    margin: 15px 0;
+    width: 25%;
+  }
+}
+
+@media (max-width : 900px) {
+  .our-plans-section {
+    padding: 63px 0 55px;
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  .our-plans-row {
+    margin: 38px -10px 0;
+  }
+
+  .our-plan-item {
+    padding: 0 10px;
+    width: 50%;
+  }
+
+  .our-plan-inner {
+    padding: 30px 13px;
+  }
+
+  .our-plan-title {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .our-plans-link {
+    margin-top: 30px;
+    padding-bottom: 12px;
+    text-align: center;
+  }
+}

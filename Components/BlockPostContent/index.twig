@@ -1,0 +1,138 @@
+<div class="post-fixed-line"></div>
+<div class="post-featured-image" style="background-image: url('{{ post.thumbnail.src }}');"></div>
+<div class="post-container">
+    <div class="post-title">
+        <h1>{{ post.post_title }}</h1>
+    </div>
+    <div class="post-author">
+        <div class="post-author-avatar" {% if user_avatar_url is not empty %} style="background-image: url('{{ user_avatar_url }}')" {% endif %}></div>
+        <div class="post-author-info">
+            <div class="post-author-name"><a href="{{ post.author.link }}">{{ post.author.name }}</a></div>
+            <div class="post-date">{{ post.date }}</div>
+        </div>
+    </div>
+    {% if post.categories is not empty %}
+        <div class="post-category-list">
+            <ul>
+                {% for cat in post.categories %}
+                    <li><a href="{{ cat.link }}">{{ cat }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <div class="post-content">{{ post.content }}</div>
+    {% if references is not empty %}
+        <div class="post-references">
+            <h5>References</h5>
+            {% for ref in references %}
+                <div id="reference-{{ ref.number }}" class="post-ref-row">
+                    <div class="post-ref-num">
+                        {{ ref.number }}
+                    </div>
+                    <div class="post-ref-content">
+                        {{ ref.content }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div class="post-subscribe-section">
+        <div class="post-subscribe-wrapper">
+            <div class="post-subscribe-inner">
+                {{ post_subscribe_form_content|e('wp_kses_post') }}
+                <div class="start-free-trial-form">
+                    {{ post_subscribe_gravity_grom_shortcode|shortcodes }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-social-sharing-section">
+        {{ social_shring_html }}
+    </div>
+    <div class="post-author-detail-section">
+        <div class="post-author-detail-avatar">
+            <img src="{{ user_avatar_url }}" alt="" />
+        </div>
+        <div class="post-author-detail-info">
+            <h2>{{ post.author.name }}</h2>
+            <p>{{ post.author.description }}</p>
+            <div class="post-author-detail-link">
+                <a class="global-link" href="{{ post.author.link }}">more from {{ post.author.name }}</a>
+            </div>
+        </div>
+    </div>
+    {% if post_footer_desktop_image is not empty %}
+        <div class="post-footer-image-section mobile-hide">
+            {% if post_footer_image_link_url is empty %}
+                <img src="{{ post_footer_desktop_image.src }}" alt="{{ post_footer_desktop_image.alt|e }}">                
+            {% else %}
+                <a href="{{ post_footer_image_link_url }}">
+                    <img src="{{ post_footer_desktop_image.src }}" alt="{{ post_footer_desktop_image.alt|e }}">
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if post_footer_mobile_image is not empty %}
+        <div class="post-footer-image-section mobile-show">
+            {% if post_footer_image_link_url is empty %}
+                <img src="{{ post_footer_mobile_image.src }}" alt="{{ post_footer_mobile_image.alt|e }}">                
+            {% else %}
+                <a href="{{ post_footer_image_link_url }}">
+                    <img src="{{ post_footer_mobile_image.src }}" alt="{{ post_footer_mobile_image.alt|e }}">
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% if related_blogs is not empty %}
+    <section class="post-related-section">
+        <div class="container">
+            <div class="three-posts-column-by-category-header">
+                <div class="three-posts-column-by-category-header-left">
+                    <h2>Related Articles</h2>
+                </div>
+                <div class="three-posts-column-by-category-header-right mobile-hide">
+                    <div class="three-posts-column-by-category-link">
+                        <a class="global-link" href="{{ related_blogs_link }}">See All Blog Posts</a>
+                    </div>
+                </div>
+            </div>
+            <div class="three-posts-column-by-category-row">
+                {% for blog in related_blogs %}
+                    <div class="three-posts-column-by-category-item blog-card displayed-post" data-post-id="{{ blog.id }}">
+                        <a href="{{ blog.link }}">
+                            <div class="inner">
+                                <div class="blog-image" style="background-image: url('{{ blog.thumbnail.src('blog_400_200') }}');"></div>
+                                <div class="blog-info">
+                                    <div class="blog-category {{ blog.category.slug }}">{{ blog.category }}</div>
+                                    <h3>{{ blog.post_title }}</h3>
+                                    <p>{{ blog.post_excerpt|slice(0, 85) }}...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% else %}
+                    No Blogs have been found.
+                {% endfor %}
+            </div>
+            <div class="three-posts-column-by-category-link mobile-show">
+                <a class="global-link" href="{{ related_blogs_link }}">See All Blog Posts</a>
+            </div>
+        </div>
+    </section>
+{% endif %}
+{{ renderComponent('HomeStartTrialSection', {'content': post_footer_form_content, 'gravity_grom_shortcode': post_footer_gravity_grom_shortcode}) }}
+{% if popup_dialog_show %}
+    <div class="post-popup-dialog post-popup-hide mobile-hide" data-trigger="{{ popup_trigger }}" style="right: -{{ popup_dialog_desktop_image.width }}px">
+        <div class="post-popup-dialog-close"></div>
+        <div class="post-popup-dialog-image">
+            <a href="{{ popup_dialog_url_link }}"><img src="{{ popup_dialog_desktop_image.src }}" alt="{{ popup_dialog_desktop_image.alt }}" /></a>
+        </div>
+    </div>
+    <div class="post-popup-dialog post-popup-hide mobile-show" data-trigger="{{ popup_trigger }}" style="right: -{{ popup_dialog_mobile_image.width }}px">
+        <div class="post-popup-dialog-close"></div>
+        <div class="post-popup-dialog-image">
+            <a href="{{ popup_dialog_url_link }}"><img src="{{ popup_dialog_mobile_image.src }}" alt="{{ popup_dialog_mobile_image.alt }}" /></a>
+        </div>
+    </div>
+{% endif %}

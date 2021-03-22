@@ -1,0 +1,136 @@
+.integration-list-section {
+  background-color: $pale-grey;
+  padding: 116px 0 124px;
+}
+
+.integration-category-section {
+  h2 {
+    font-size: 30px;
+  }
+}
+
+.integration-category-section+.integration-category-section {
+  margin-top: 117px;
+}
+
+.integration-category-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.integration-category-item {
+  margin-top: 40px;
+  padding: 0 20px;
+  width: 50%;
+}
+
+.integration-category-item-inner {
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  position: relative;
+  top: 0;
+  transition: top 0.5s;
+
+  @media (min-width : 1000px) {
+    &:hover {
+      top: -15px;
+    }
+  }
+}
+
+.integration-category-item-image {
+  text-align: center;
+  width: 125px;
+}
+
+.integration-category-item-info {
+  background-color: $white;
+  border-radius: 0 8px 8px 0;
+  flex: 1;
+  padding: 32px 43px 33px;
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 16px;
+    margin-top: 9px;
+  }
+}
+
+.integration-category-link {
+  margin-top: 58px;
+  text-align: center;
+  
+  .global-link {
+    @include remove-phone-tab-high-light();
+    padding-right: 11px;
+    
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.integration-list-load-spinner {
+  background-color: #000;
+  background-image: url('../assets/images/ajax-spin.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+}
+
+
+@media (max-width : 1000px) {
+  .integration-list-section {
+    padding: 62px 0 70px;
+  }
+
+  .integration-category-section + .integration-category-section {
+    margin-top: 63px;
+  }
+
+  .integration-category-row {
+    display: block;
+    margin: 0;
+  }
+
+  .integration-category-item {
+    padding: 0;
+    width: 100%;
+  }
+
+  .integration-category-item-image {
+    padding: 0 19px;
+    width: 95px;
+  }
+
+  .integration-category-item-info {
+    padding: 24px 28px 26px;
+
+    h3 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-top: 6px;
+    }
+  }
+
+  .integration-category-link {
+    margin-top: 44px;
+  }
+}

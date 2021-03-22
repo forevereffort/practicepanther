@@ -1,0 +1,54 @@
+<section class="payment-table-section">
+    <div class="container">
+        <div class="payment-table-title">
+            {{ title|e('wp_kses_post') }}
+        </div>
+        <div class="payment-table-wrapper">
+            <table class="price-table" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr class="price-header-row">
+                        <th class="price-title"></th>
+                        <th class="price-val">
+                            <span>Other Legal Processors</span>
+                        </th>
+                        <th class="price-val gray-bkg">
+                            <div class="popular-mark">BEST VALUE</div>
+                            <div class="panther-payments">                            
+                                <img src="{{ panther_payments_image.src }}" alt="{{ panther_payments_image.alt }}" />
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                        <tr class="price-normal-row">
+                            <td class="price-title">
+                                <div class="price-title-inner">
+                                    <i class="info-icon-2"></i><span>{{ row.title.info }}</span>
+                                </div>
+                            </td>
+                            <td class="price-val">
+                                {% if row.other_legal_processors.type == 'text' %}
+                                    <p>{{ row.other_legal_processors.info }}</p>
+                                {% elseif row.other_legal_processors.type == 'yes' %}
+                                    <i class="checked-icon-2"></i>
+                                {% elseif row.other_legal_processors.type == 'no' %}
+                                    <i class="close-icon"></i>
+                                {% endif %}
+                            </td>
+                            <td class="price-val gray-bkg">
+                                {% if row.panther_payments.type == 'text' %}
+                                    <p>{{ row.panther_payments.info }}</p>
+                                {% elseif row.panther_payments.type == 'yes' %}
+                                    <i class="checked-icon-2"></i>
+                                {% elseif row.panther_payments.type == 'no' %}
+                                    <i class="close-icon"></i>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

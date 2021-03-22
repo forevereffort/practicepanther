@@ -1,0 +1,151 @@
+.block-full-image-title-section {
+  overflow: hidden;
+  padding: 120px 0 100px;
+
+  &.gray {
+    background-color: $gray-background-color;
+  }
+}
+
+.block-full-image-title-row {
+  align-items: center;
+  display: flex;
+
+  &.image_left {
+    .image-col {
+      float: right;
+    }
+
+    .content-col {
+      padding-left: 80px;
+    }
+  }
+
+  &.image_right {
+    flex-direction: row-reverse;
+
+    .content-col {
+      float: right;
+      padding-right: 80px;
+    }
+  }
+}
+
+.block-full-image-title-col {
+  width: 50%;
+
+  .image-col {
+    img {
+      max-width: none;
+    }
+  }
+
+  .content-col {
+    max-width: $container-width / 2;
+  }
+
+  .title-info {
+    h2 {
+      font-size: 40px;
+      word-break: break-word;
+    }
+
+    p {
+      color: $slate-grey;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+
+  .block-link {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width : 1210px) {
+  .block-full-image-title-row {
+    .content-col {
+      max-width: none;
+    }
+
+    &.image_left {
+      .content-col {
+        padding-right: 48px;
+      }
+    }
+
+    &.image_right {
+      .content-col {
+        padding-left: 48px;
+      }
+    }
+  }
+}
+
+@media (max-width : 1000px) {
+  .block-full-image-title-section {
+    padding: 70px 20px 67px;
+  }
+
+  .block-full-image-title-row {
+    display: block;
+
+    .image-col {
+      text-align: center;
+    }
+
+    &.image_left {
+      .image-col {
+        float: none;
+      }
+    }
+  }
+
+  .block-full-image-title-col {
+    @include clearfix();
+    width: 100%;
+    
+    .image-col {
+      img {
+        max-width: none;
+        width: 400px;
+      }
+    }
+    
+    .content-col {
+      float: none !important;
+      margin-top: 40px;
+      padding: 0 !important;
+    }
+
+    .title-info {
+      h2 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    .block-link {
+      margin-top: 33px;
+    }
+  }
+}
+
+@media (max-width : 500px) {
+  .block-full-image-title-row {
+    &.image_left {
+      .image-col {
+        float: right;
+      }
+    }
+
+    &.image_right {
+      .image-col {
+        float: left;
+      }
+    }
+  }
+}

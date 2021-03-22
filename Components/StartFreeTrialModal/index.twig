@@ -1,0 +1,61 @@
+<div id="homepage-modal-wrapper" class="homepage-modal-wrapper hide" data-gform-id="{{ modal_form_id }}" data-show-init="{% if show_modal %}true{% else %}false{% endif %}">
+    <div class="homepage-modal">
+        <div class="homepage-modal-logo">
+            <img src="{{ logo.src }}" alt="{{ logo.alt|e }}">
+        </div>
+        <div id="homepage-modal-close" class="homepage-modal-close"></div>
+        <div class="homepage-modal-row">
+            <div class="homepage-modal-left">
+                <div class="homepage-modal-content">
+                    {{ modal_content|e('wp_kses_post') }}
+                </div>
+                <div class="homepage-modal-image">
+                    {% if modal_retina_image %}
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(modal_image.width, modal_image.height) }}"
+                            data-src="{{ modal_image.src|resizeDynamic(modal_image.width) }}"
+                            data-srcset="{{ modal_image.src|resizeDynamic(modal_image.width) }} 1x, {{ modal_retina_image.src|resizeDynamic(modal_retina_image.width) }} 2x"
+                            data-sizes="auto"
+                            alt="{{ modal_image.alt|e }}"
+                        >
+                    {% else %}
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(modal_image.width, modal_image.height) }}"
+                            data-src="{{ modal_image.src|resizeDynamic(modal_image.width) }}"
+                            alt="{{ modal_image.alt|e }}"
+                        >
+                    {% endif %}
+                </div>
+                <div class="homepage-modal-form start-free-trial-form">
+                    {{ modal_gravity_grom_shortcode|shortcodes }}
+                </div>
+                <div class="homepage-modal-form-description">
+                    {{ modal_form_description|e('wp_kses_post') }}
+                </div>
+            </div>   
+            <div class="homepage-modal-right">
+                <div class="homepage-modal-image">
+                    {% if modal_retina_image %}
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(modal_image.width, modal_image.height) }}"
+                            data-src="{{ modal_image.src|resizeDynamic(modal_image.width) }}"
+                            data-srcset="{{ modal_image.src|resizeDynamic(modal_image.width) }} 1x, {{ modal_retina_image.src|resizeDynamic(modal_retina_image.width) }} 2x"
+                            data-sizes="auto"
+                            alt="{{ modal_image.alt|e }}"
+                        >
+                    {% else %}
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(modal_image.width, modal_image.height) }}"
+                            data-src="{{ modal_image.src|resizeDynamic(modal_image.width) }}"
+                            alt="{{ modal_image.alt|e }}"
+                        >
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

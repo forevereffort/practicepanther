@@ -1,0 +1,54 @@
+<section class="home-testimonials-section">
+    <div class="container">
+        {% if title %}
+            <div class="title">
+                {{ title|e('wp_kses_post') }}
+            </div>
+        {% endif %}
+        <div class="home-testimonial-slider">
+            <div class="home-testimonial-wrapper">
+                {% for testimonial in testimonials %}
+                    <div class="home-testimonial">
+                        <div class="inner">   
+                            <div class="testimonial-top-part">
+                                <div class="top-line"></div>
+                                <div class="content">
+                                    {{ testimonial.content|e('wp_kses_post') }}
+                                </div>
+                            </div>
+                            <div class="testimonial-bottom-part">
+                                <div class="avatar">
+                                    <img
+                                        class="lazyload"
+                                        data-src="{{ testimonial.user_avatar.src|resizeDynamic(52, 52) }}"
+                                        data-srcset="{{ testimonial.user_avatar.src|resizeDynamic(52, 52) }} 1x, {{ testimonial.user_avatar.src|resizeDynamic(104, 104) }} 2x"
+                                        alt="{{ testimonial.user_avatar.alt|e }}"
+                                    />
+                                </div>
+                                <div class="info">
+                                    <h2>{{ testimonial.title|e('wp_kses_post') }}</h2>
+                                    <p>{{ testimonial.role|e('wp_kses_post') }}</p>
+                                </div>
+                                <div class="company">
+                                    <img
+                                        class="lazyload"
+                                        data-src="{{ testimonial.company_logo.src|resizeDynamic(testimonial.company_logo.width / 2) }}"
+                                        data-srcset="{{ testimonial.company_logo.src|resizeDynamic(testimonial.company_logo.width / 2) }} 1x, {{ testimonial.company_logo.src|resizeDynamic(testimonial.company_logo.width) }} 2x"
+                                        alt="{{ testimonial.company_logo.alt|e }}"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    No testimonials have been found.
+                {% endfor %}
+            </div>
+            <div class="home-testimonial-slider-next"></div>
+            <div class="home-testimonial-slider-prev"></div>
+        </div>
+        <div class="home-testimonial-link">
+            <a class="global-link" href="{{ link_url }}">{{ link_title }}</a>
+        </div>
+    </div>
+</section>

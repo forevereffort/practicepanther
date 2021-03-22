@@ -1,0 +1,53 @@
+.press-media-hero-section {
+  padding: 114px 0 128px;
+
+  .title-info {
+    text-align: center;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      color: $grey;
+      font-size: 18px;
+      margin-top: 9px;
+    }
+  }
+
+  .image-col {
+    margin-top: 59px;
+  }
+}
+
+.press-media-hero-logo-row {
+  margin-top: 67px;
+}
+
+@media (max-width : 1000px) {
+  .press-media-hero-section {
+    padding: 62px 0 67px;
+  
+    .title-info {
+      h1 {
+        font-size: 30px;
+      }
+  
+      p {
+        font-size: 15px;
+      }
+    }
+  
+    .image-col {
+      margin-top: 39px;
+    }
+  }
+  
+  .press-media-hero-logo-row {
+    margin-top: 40px;
+
+    .home-featured-logo-title {
+      display: none;
+    }
+  }
+}

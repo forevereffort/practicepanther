@@ -1,0 +1,152 @@
+.block-text-image-text-section {
+  padding: 129px 0 138px;
+
+  &.gray {
+    background-color: $gray-background-color;
+  }
+
+  h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .block-link {
+    margin-top: 60px;
+    text-align: center;
+  }
+}
+
+.block-text-image-text-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 64px;
+
+  .left-col {
+    align-items: center;
+    display: flex;
+    width: 25%;
+
+    h3 {
+      font-size: 30px;
+    }
+
+    p {
+      color: $slate-grey;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+
+  .image-col {
+    text-align: center;
+    width: 50%;
+
+    img {
+      max-width: 450px;
+    }
+  }
+
+  .right-col {
+    width: 25%;
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      color: $slate-grey;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    p+h3 {
+      margin-top: 34px;
+    }
+  }
+}
+
+@media (max-width: 1210px) {
+  .block-text-image-text-section {
+    h2 {
+      display: none;
+    }
+
+    .block-link {
+      margin-top: 40px;
+    }
+  }
+
+  .block-text-image-text-row {
+    margin: 0 auto;
+    max-width: 570px;
+        
+    .left-col {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .image-col {
+      margin: 40px 0 45px;
+      width: 100%;
+    }
+
+    .right-col {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .block-text-image-text-section {
+    padding: 63px 0 67px;
+
+    .container {
+      padding: 0;
+    }
+
+    .block-link {
+      margin-top: 41px;
+    }
+  }
+
+  .block-text-image-text-row {
+    padding: 0 25px;
+
+    .left-col {
+      h3 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 15px;
+        margin-top: 9px;
+      }
+    }
+
+    .right-col {
+      h3 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 15px;
+        margin-top: 8px;
+      }
+
+      p+h3 {
+        margin-top: 26px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .block-text-image-text-row {
+    .image-col {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

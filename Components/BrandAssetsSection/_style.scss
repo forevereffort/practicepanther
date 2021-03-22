@@ -1,0 +1,101 @@
+.brand-assets-section {
+  padding: 124px 0;
+}
+
+.brand-assets-row {
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.17);
+  display: flex;
+}
+
+.brand-assets-icon {
+  background-color: $pale-grey;
+  background-image: url('../assets/images/logo-brand.svg');
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 270px 284px;
+  border-radius: 8px 0 0 8px;
+  width: 395px;
+}
+
+.brand-assets-content {
+  flex: 1;
+  padding: 64px 200px 73px 103px;
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    color: $slate-grey;
+    font-size: 18px;
+    margin-top: 16px;
+  }
+}
+
+.brand-assets-content-btn {
+  margin-top: 43px;
+
+  a {
+    background-color: $green;
+    border-radius: 21px;
+    box-shadow: 0 8px 20px -11px rgba(0, 0, 0, 0.26);
+    color: $white;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 1.52px;
+    padding: 12px 24px 12px 48px;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+      background-color: $white;
+      border-radius: 50%;
+      content: '';
+      height: 12px;
+      left: 26px;
+      position: absolute;
+      top: 12px;
+      width: 12px;
+    }
+  }
+}
+
+@media (max-width : 1000px) {
+  .brand-assets-section {
+    padding: 70px 0;
+  }
+  
+  .brand-assets-row {
+    display: block;
+  }
+  
+  .brand-assets-icon {
+    background-image: url('../assets/images/logo-brand-mobile.svg');
+    background-size: 200px 166px;
+    border-radius: 8px 8px 0 0;
+    height: 166px;
+    width: 100%;
+  }
+  
+  .brand-assets-content {
+    padding: 49px 20px 57px;
+    text-align: center;
+    width: 100%;
+  
+    h2 {
+      font-size: 30px;
+    }
+  
+    p {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  }
+  
+  .brand-assets-content-btn {
+    margin-top: 21px;
+  }
+}
